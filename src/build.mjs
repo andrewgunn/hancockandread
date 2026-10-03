@@ -368,7 +368,7 @@ const TESTIMONIALS = [
   },
   {
     who: "Eric Baines",
-    where: "Kitchens, wardrobes &amp; bathroom",
+    where: "",
     short: "Mark's knowledge and help is exemplary, and the fitting crew have always been punctual, respectful and most of all insistent on cleaning up after finishing the job.",
     salute: "",
     body: [
@@ -715,7 +715,7 @@ ${pageHero(p, { h1: "Testimonials", intro: "Please read our testimonials for an 
   <div class="wrap">
     <div class="review-summary" data-reveal><a class="g-score" href="${GOOGLE_URL}" target="_blank" rel="noopener"><b>4.9</b>${STARS}<span>10 reviews on Google</span></a></div>
     ${REVIEWS.map((t, i) => `<article class="letter">
-      <div class="letter-who" data-reveal><span class="n">0${i + 1}</span><h2>${t.who}</h2><p>${t.google ? `${STARS} Google review` : `Testimonial, ${t.where}`}</p></div>
+      <div class="letter-who" data-reveal><span class="n">0${i + 1}</span><h2>${t.who}</h2><p>${t.google ? `${STARS} Google review` : `Testimonial${t.where ? ", " + t.where : ""}`}</p></div>
       <div class="letter-body" data-reveal>
         ${t.salute ? `<p class="salute">${t.salute}</p>` : ""}
         ${t.body.map((b) => `<p>${b}</p>`).join("\n        ")}
