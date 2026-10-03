@@ -149,9 +149,8 @@
       gsap.to(media, { yPercent: 14, ease: "none", scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true } });
       return;
     }
-    // Scroll away: hero shrinks into a rounded card, copy drifts up
-    gsap.to($(".hero-media", hero), { clipPath: "inset(7% 4% 0% 4% round 28px)", ease: "none", scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true } });
-    gsap.to($(".hero-content", hero), { yPercent: -18, opacity: 0, ease: "none", scrollTrigger: { trigger: hero, start: "20% top", end: "80% top", scrub: true } });
+    // Photo drifts slower than the page as you scroll
+    gsap.to($(".hero-slides", hero), { yPercent: 12, ease: "none", scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true } });
     // Mouse parallax
     if (finePointer) {
       var wrap = $(".hero-media", hero);
