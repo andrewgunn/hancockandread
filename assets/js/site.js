@@ -290,14 +290,16 @@
       if (!track) return;
       var section = $(".process");
       var dist = function () { return track.scrollWidth - window.innerWidth; };
+      // On short screens pin by the bottom edge so the step text stays in view
+      var start = function () { return section.offsetHeight > window.innerHeight ? "bottom bottom" : "top top"; };
       var tween = gsap.to(track, {
         x: function () { return -dist(); }, ease: "none",
         scrollTrigger: {
-          trigger: section, start: "top top", end: function () { return "+=" + dist(); },
+          trigger: section, start: start, end: function () { return "+=" + dist(); },
           pin: true, scrub: true, invalidateOnRefresh: true, anticipatePin: 1
         }
       });
-      gsap.to(".process-progress i", { scaleX: 1, ease: "none", scrollTrigger: { trigger: section, start: "top top", end: function () { return "+=" + dist(); }, scrub: true } });
+      gsap.to(".process-progress i", { scaleX: 1, ease: "none", scrollTrigger: { trigger: section, start: start, end: function () { return "+=" + dist(); }, scrub: true, invalidateOnRefresh: true } });
       $$(".step .frame img", track).forEach(function (img) {
         gsap.fromTo(img, { scale: 1.25, xPercent: -6 }, { scale: 1.05, xPercent: 6, ease: "none", scrollTrigger: { trigger: img.parentElement, containerAnimation: tween, start: "left right", end: "right left", scrub: true } });
       });
