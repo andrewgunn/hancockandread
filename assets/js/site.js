@@ -106,10 +106,10 @@
     var loader = $(".loader");
     var seen = false;
     try { seen = sessionStorage.getItem("hr-intro") === "1"; sessionStorage.setItem("hr-intro", "1"); } catch (e) {}
-    if (!motion || !loader || seen) { done(0); return; }
+    if (!motion || !loader || seen) { doc.classList.remove("intro"); done(0); return; }
     loader.classList.add("is-on");
     lockScroll(true);
-    var tl = gsap.timeline({ onComplete: function () { loader.remove(); lockScroll(false); } });
+    var tl = gsap.timeline({ onComplete: function () { loader.remove(); doc.classList.remove("intro"); lockScroll(false); } });
     tl.to(".loader-logo", { clipPath: "inset(0 0% 0 0)", duration: 1.1, ease: "power3.inOut" })
       .to(".loader-line i", { scaleX: 1, duration: 1, ease: "power2.inOut" }, 0.2)
       .to(".loader-tag", { opacity: 1, duration: 0.6 }, 0.6)

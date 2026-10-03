@@ -752,3 +752,5 @@ a.trust-item:hover span { color: var(--paper); text-decoration: underline; text-
 @media (max-height: 780px) and (min-width: 641px) {
   .hero h1 { max-width: 15ch; font-size: clamp(2.4rem, min(7.6vw, 11svh), 8rem); }
 }
+/* First visit: intro screen is up from the first paint, before any script runs */
+.js.motion.intro .loader { display: grid; }
