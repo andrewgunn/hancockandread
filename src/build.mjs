@@ -322,7 +322,7 @@ function layout({ route, title, description, body, hero = true, preload, ld = []
 <link rel="preload" href="${p}assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 ${pre}
 <link rel="stylesheet" href="${p}assets/css/site.css?v=${VERSION}">
-<script>(function(d){d.className+=" js"+(matchMedia("(prefers-reduced-motion: reduce)").matches?"":" motion");setTimeout(function(){if(!window.__hr)d.classList.remove("motion")},3500)})(document.documentElement)</script>
+<script>(function(d){var m=!matchMedia("(prefers-reduced-motion: reduce)").matches;d.className+=" js"+(m?" motion":"");try{if(m&&sessionStorage.getItem("hr-transition")==="1")d.className+=" arriving"}catch(e){}setTimeout(function(){if(!window.__hr)d.classList.remove("motion","arriving")},3500)})(document.documentElement)</script>
 ${[orgLd(), ...ld].map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join("\n")}
 </head>
 <body>

@@ -85,10 +85,11 @@
     var arrived = false;
     try { arrived = sessionStorage.getItem("hr-transition") === "1"; sessionStorage.removeItem("hr-transition"); } catch (e) {}
     if (arrived) {
-      gsap.set(curtain, { yPercent: 0 });
-      gsap.to(curtain, { yPercent: -100, duration: 1, ease: "power4.inOut", delay: 0.05 });
+      gsap.set(curtain, { y: 0, yPercent: 0 });
+      gsap.to(curtain, { yPercent: -100, duration: 1, ease: "power4.inOut", delay: 0.05, onComplete: function () { doc.classList.remove("arriving"); } });
     } else {
-      gsap.set(curtain, { yPercent: 100 });
+      gsap.set(curtain, { y: 0, yPercent: 100 });
+      doc.classList.remove("arriving");
     }
     document.addEventListener("click", function (e) {
       var a = e.target.closest("a");
@@ -96,12 +97,12 @@
       e.preventDefault();
       var go = function () { location.href = a.href; };
       try { sessionStorage.setItem("hr-transition", "1"); } catch (err) {}
-      gsap.fromTo(curtain, { yPercent: 100 }, { yPercent: 0, duration: 0.7, ease: "power4.inOut", onComplete: go });
+      gsap.fromTo(curtain, { y: 0, yPercent: 100 }, { y: 0, yPercent: 0, duration: 0.7, ease: "power4.inOut", onComplete: go });
       gsap.fromTo($("img", curtain), { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.5, delay: 0.3 });
       setTimeout(go, 1200);
     });
     window.addEventListener("pageshow", function (e) {
-      if (e.persisted) { gsap.set(curtain, { yPercent: 100 }); setMenu && doc.classList.contains("menu-open") && setMenu(false); }
+      if (e.persisted) { gsap.set(curtain, { y: 0, yPercent: 100 }); doc.classList.remove("arriving"); setMenu && doc.classList.contains("menu-open") && setMenu(false); }
     });
   }
 

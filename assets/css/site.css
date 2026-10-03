@@ -658,3 +658,4 @@ ul.areas { padding: 0; margin: 28px 0 0; }
 }
 .nav-links, .nav-phone { transition: opacity 0.4s ease; }
 .menu-open .nav-links, .menu-open .nav-phone { opacity: 0; pointer-events: none; }
+.js.motion.arriving .curtain { transform: none; }
