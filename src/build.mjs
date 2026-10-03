@@ -411,7 +411,7 @@ function quoteSlider(cls = "") {
     ${REVIEWS.map((t) => `<figure class="rv-card" data-reveal>
       ${t.google ? STARS : '<span class="rv-mark" aria-hidden="true">&ldquo;</span>'}
       <blockquote>${t.short}</blockquote>
-      <figcaption><b>${t.who}</b><span>${t.google ? "Google review" : t.where}</span></figcaption>
+      <figcaption><b>${t.who}</b>${t.where ? `<span>${t.where}</span>` : ""}<span class="rv-src">${t.google ? "Google review" : "Testimonial"}</span></figcaption>
     </figure>`).join("\n    ")}
   </div>
 </section>`;
@@ -715,7 +715,7 @@ ${pageHero(p, { h1: "Testimonials", intro: "Please read our testimonials for an 
   <div class="wrap">
     <div class="review-summary" data-reveal><a class="g-score" href="${GOOGLE_URL}" target="_blank" rel="noopener"><b>4.9</b>${STARS}<span>10 reviews on Google</span></a></div>
     ${REVIEWS.map((t, i) => `<article class="letter">
-      <div class="letter-who" data-reveal><span class="n">0${i + 1}</span><h2>${t.who}</h2><p>${t.google ? `${STARS} Google review` : t.where}</p></div>
+      <div class="letter-who" data-reveal><span class="n">0${i + 1}</span><h2>${t.who}</h2><p>${t.google ? `${STARS} Google review` : `Testimonial, ${t.where}`}</p></div>
       <div class="letter-body" data-reveal>
         ${t.salute ? `<p class="salute">${t.salute}</p>` : ""}
         ${t.body.map((b) => `<p>${b}</p>`).join("\n        ")}

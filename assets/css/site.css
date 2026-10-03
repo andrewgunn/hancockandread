@@ -431,7 +431,7 @@ a.chip:hover { background: var(--ink); color: var(--paper); }
 .rv-nav button:disabled { opacity: 0.3; cursor: default; }
 .rv-nav svg { width: 18px; height: 18px; }
 .rv-track {
-  display: flex; gap: clamp(14px, 1.6vw, 24px); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+  display: flex; align-items: flex-start; gap: clamp(14px, 1.6vw, 24px); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
   padding: 4px max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));
   scroll-padding-inline: max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));
 }
@@ -694,3 +694,5 @@ a.trust-item:hover span { color: var(--paper); text-decoration: underline; text-
 .letter-who .g-stars { vertical-align: -1px; margin-right: 6px; }
 .review-summary { padding-bottom: clamp(40px, 5vw, 64px); }
 .g-score { flex-wrap: wrap; }
+.rv-card figcaption .rv-src { margin-top: 8px; justify-self: start; padding: 3px 10px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+@media (max-width: 700px) { .rv-nav { display: none; } }
