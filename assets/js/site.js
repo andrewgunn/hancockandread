@@ -121,19 +121,82 @@
   function heroIn() {
     var hero = $(".hero, .page-hero");
     if (!hero) return;
-    var img = $(".hero-media img", hero);
+    var home = hero.classList.contains("hero");
     var tl = gsap.timeline();
-    if (img) tl.fromTo(img, { scale: 1.25 }, { scale: 1, duration: 2.4, ease: "power3.out" }, 0);
+    var doors = $$(".hero-doors i", hero);
+    if (doors.length) {
+      tl.to(doors[0], { xPercent: -101, duration: 1.5, ease: "power4.inOut" }, 0.1)
+        .to(doors[1], { xPercent: 101, duration: 1.5, ease: "power4.inOut" }, 0.1)
+        .set($(".hero-doors", hero), { display: "none" });
+    }
+    var media = $(home ? ".hero-slides" : ".hero-media img", hero);
+    if (media) tl.fromTo(media, { scale: 1.3 }, { scale: 1, duration: 2.6, ease: "power3.out" }, 0.1);
     var h1 = $("h1", hero);
     if (h1) {
-      var split = new SplitText(h1, { type: "lines", linesClass: "split-line", mask: "lines" });
-      gsap.set(h1, { visibility: "visible" });
-      tl.from(split.lines, { yPercent: 110, duration: 1.3, ease: "power4.out", stagger: 0.09 }, 0.15);
+      if (home) {
+        var split = new SplitText(h1, { type: "lines,chars", linesClass: "split-line", mask: "lines" });
+        gsap.set(h1, { visibility: "visible" });
+        tl.from(split.chars, { yPercent: 115, rotate: 8, duration: 1.2, ease: "power4.out", stagger: 0.022 }, 0.75);
+      } else {
+        var sl = new SplitText(h1, { type: "lines", linesClass: "split-line", mask: "lines" });
+        gsap.set(h1, { visibility: "visible" });
+        tl.from(sl.lines, { yPercent: 110, duration: 1.3, ease: "power4.out", stagger: 0.09 }, 0.15);
+      }
     }
-    tl.from($$(".hero-rating, .crumbs, .hero-bottom > *, .page-hero p", hero), { y: 24, opacity: 0, duration: 1, ease: "power3.out", stagger: 0.08 }, 0.45);
-    if (img) {
-      gsap.to(img, { yPercent: 14, ease: "none", scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true } });
+    tl.from($$(".hero-rating, .crumbs, .hero-bottom > *, .page-hero p, .hero-index", hero), { y: 24, opacity: 0, duration: 1, ease: "power3.out", stagger: 0.08 }, home ? 1.2 : 0.45);
+
+    if (!home) {
+      gsap.to(media, { yPercent: 14, ease: "none", scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true } });
+      return;
     }
+    // Scroll away: hero shrinks into a rounded card, copy drifts up
+    gsap.to($(".hero-media", hero), { clipPath: "inset(7% 4% 0% 4% round 28px)", ease: "none", scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true } });
+    gsap.to($(".hero-content", hero), { yPercent: -18, opacity: 0, ease: "none", scrollTrigger: { trigger: hero, start: "20% top", end: "80% top", scrub: true } });
+    // Mouse parallax
+    if (finePointer) {
+      var wrap = $(".hero-media", hero);
+      var xTo = gsap.quickTo(wrap, "x", { duration: 1.2, ease: "power3" });
+      var yTo = gsap.quickTo(wrap, "y", { duration: 1.2, ease: "power3" });
+      gsap.set(wrap, { scale: 1.05 });
+      hero.addEventListener("mousemove", function (e) {
+        xTo((e.clientX / window.innerWidth - 0.5) * -24);
+        yTo((e.clientY / window.innerHeight - 0.5) * -16);
+      });
+    }
+    slideshow(hero, tl);
+  }
+
+  function slideshow(hero, intro) {
+    var slides = $$(".hero-slide", hero);
+    var tabs = $$(".hero-index button", hero);
+    if (slides.length < 2) return;
+    var i = 0, timer, running = true, DUR = 6.5;
+    gsap.set(slides, { opacity: 0 });
+    gsap.set(slides[0], { opacity: 1 });
+    function bar(n) {
+      tabs.forEach(function (t, k) {
+        var b = $("i", t);
+        gsap.killTweensOf(b);
+        t.toggleAttribute("aria-current", k === n);
+        gsap.set(b, { scaleX: k < n ? 1 : 0 });
+      });
+      gsap.fromTo($("i", tabs[n]), { scaleX: 0 }, { scaleX: 1, duration: DUR, ease: "none" });
+    }
+    function go(n) {
+      var prev = slides[i];
+      i = (n + slides.length) % slides.length;
+      var next = slides[i];
+      gsap.set(next, { zIndex: 2 });
+      gsap.set(prev, { zIndex: 1 });
+      gsap.fromTo(next, { opacity: 0, scale: 1.12 }, { opacity: 1, scale: 1, duration: 1.6, ease: "power2.inOut", onComplete: function () { gsap.set(prev, { opacity: 0 }); } });
+      bar(i);
+      schedule();
+    }
+    function schedule() { clearTimeout(timer); if (running) timer = setTimeout(function () { go(i + 1); }, DUR * 1000); }
+    tabs.forEach(function (t, k) { t.addEventListener("click", function () { if (k !== i) go(k); }); });
+    ScrollTrigger.create({ trigger: hero, start: "top top", end: "bottom top", onToggle: function (self) { running = self.isActive; if (running) schedule(); else clearTimeout(timer); } });
+    document.addEventListener("visibilitychange", function () { running = !document.hidden; if (running) schedule(); else clearTimeout(timer); });
+    intro.add(function () { bar(0); schedule(); }, 1.2);
   }
 
   function scrollAnims() {
@@ -191,6 +254,19 @@
         scrollTrigger: { trigger: el, start: "top 90%" },
         onUpdate: function () { el.textContent = Math.round(o.v) + suffix; }
       });
+    });
+
+    // Dark sections open out from a rounded card as they arrive
+    $$("[data-expand]").forEach(function (el) {
+      gsap.fromTo(el, { clipPath: "inset(0% 3.5% 0% 3.5% round 28px)" }, {
+        clipPath: "inset(0% 0% 0% 0% round 0px)", ease: "none",
+        scrollTrigger: { trigger: el, start: "top bottom", end: "top 20%", scrub: true }
+      });
+    });
+
+    // Gentle parallax inside room cards
+    $$(".room img").forEach(function (im) {
+      gsap.fromTo(im, { yPercent: -6 }, { yPercent: 6, ease: "none", scrollTrigger: { trigger: im.parentElement, start: "top bottom", end: "bottom top", scrub: true } });
     });
 
     // Parallax columns

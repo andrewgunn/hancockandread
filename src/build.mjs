@@ -228,7 +228,7 @@ function pageHero(p, { h1, intro, image, alt, short, trail }) {
 
 function cta(p, { title = "Talk to us about your project", text } = {}) {
   return `
-<section class="cta section">
+<section class="cta section" data-expand>
   <img class="cta-mono" src="${p}assets/brand/icon-512.png" width="512" height="512" alt="" aria-hidden="true" loading="lazy">
   <div class="wrap">
     <h2 class="split-lines" data-split>${title}</h2>
@@ -419,6 +419,8 @@ function quoteSlider(cls = "") {
 
 const AREAS = ["Sheffield", "Dore", "Whirlow", "Hope Valley", "South Yorkshire", "Derbyshire", "Manchester", "Leicestershire", "Nottinghamshire"];
 
+const HERO_SLIDES = [["img-3278", "Kitchens"], ["img-3292", "Bedrooms"], ["img-3319", "Bathrooms"], ["img-3268", "Studies"]];
+
 /* ---------- Pages ---------- */
 const pages = [];
 
@@ -437,7 +439,12 @@ pages.push({
   </div>
 </div>
 <section class="hero">
-  <div class="hero-media">${img(p, "img-3278", { alt: ALTS["img-3278"], eager: true, base: 2000 })}</div>
+  <div class="hero-media">
+    <div class="hero-slides">
+      ${HERO_SLIDES.map(([s], i) => img(p, s, { alt: ALTS[s], eager: i === 0, base: 2000, cls: "hero-slide" + (i === 0 ? " is-active" : "") })).join("\n      ")}
+    </div>
+  </div>
+  <div class="hero-doors" aria-hidden="true"><i></i><i></i></div>
   <div class="hero-content wrap">
     <a class="hero-rating" href="${GOOGLE_URL}" target="_blank" rel="noopener"><b>4.9</b>${STARS}<span>10 Google reviews</span></a>
     <h1 class="split-lines">Bespoke furniture, <em>made by hand</em> in Sheffield</h1>
@@ -449,7 +456,9 @@ pages.push({
       </div>
     </div>
   </div>
-  <span class="scroll-cue" aria-hidden="true">Scroll</span>
+  <div class="hero-index wrap" aria-label="Rooms">
+    ${HERO_SLIDES.map(([, l], i) => `<button type="button" data-slide="${i}"${i === 0 ? ' aria-current="true"' : ""}><span>0${i + 1}</span> ${l}<i></i></button>`).join("")}
+  </div>
 </section>
 
 <section class="trust" aria-label="Why customers trust us">
@@ -499,7 +508,7 @@ ${quoteSlider("tone")}
   </div>
 </section>
 
-<section class="process dark" id="process">
+<section data-expand class="process dark" id="process">
   <div class="section" style="padding-bottom:clamp(80px,10vw,140px)">
     <div class="wrap process-head">
       <div>
@@ -564,7 +573,7 @@ ${quoteSlider("tone")}
   </div>
 </section>
 
-<section class="columns-band" aria-labelledby="lwys">
+<section data-expand class="columns-band" aria-labelledby="lwys">
   <div class="columns" aria-hidden="true">
     ${[["img-3431", "img-4670-1", "img-3290", "img-3270"], ["img-3307", "img-5874", "img-3058", "img-4680-1", "img-2076"], ["img-3344", "8252198-interior08-800-web", "img-3283", "img-3348"]]
       .map((col) => `<div class="col">${col.map((s) => `<div class="frame">${img(p, s, { alt: "", sizes: "(max-width: 700px) 50vw, 33vw", base: 640 })}</div>`).join("")}</div>`).join("\n    ")}
