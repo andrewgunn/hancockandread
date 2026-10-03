@@ -82,29 +82,30 @@
     return true;
   }
   if (motion && curtain) {
-    var arrived = false;
-    try { arrived = sessionStorage.getItem("hr-transition") === "1"; sessionStorage.removeItem("hr-transition"); } catch (e) {}
-    // The reveal on arrival is a CSS animation (.arriving) so it never waits on scripts
-    gsap.set(curtain, { y: 0, yPercent: 100 });
-    if (arrived && doc.classList.contains("arriving")) {
+    // Curtain motion lives entirely in CSS: .leaving covers, .arriving reveals
+    try { sessionStorage.removeItem("hr-transition"); } catch (e) {}
+    if (doc.classList.contains("arriving")) {
       var settle = function () { doc.classList.remove("arriving"); };
-      curtain.addEventListener("animationend", settle, { once: true });
+      curtain.addEventListener("animationend", function (e) { if (e.target === curtain) settle(); });
       setTimeout(settle, 2500);
-    } else {
-      doc.classList.remove("arriving");
     }
     document.addEventListener("click", function (e) {
       var a = e.target.closest("a");
       if (e.defaultPrevented || !isInternal(a) || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
       e.preventDefault();
-      var go = function () { location.href = a.href; };
+      var went = false;
+      var go = function () { if (went) return; went = true; location.href = a.href; };
       try { sessionStorage.setItem("hr-transition", "1"); } catch (err) {}
-      gsap.fromTo(curtain, { y: 0, yPercent: 100 }, { y: 0, yPercent: 0, duration: 0.7, ease: "power4.inOut", onComplete: go });
-      gsap.fromTo($("img", curtain), { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.5, delay: 0.3 });
-      setTimeout(go, 1200);
+      doc.classList.remove("arriving");
+      doc.classList.add("leaving");
+      curtain.addEventListener("animationend", function (ev) { if (ev.target === curtain) go(); }, { once: true });
+      setTimeout(go, 900);
     });
     window.addEventListener("pageshow", function (e) {
-      if (e.persisted) { gsap.set(curtain, { y: 0, yPercent: 100 }); doc.classList.remove("arriving"); setMenu && doc.classList.contains("menu-open") && setMenu(false); }
+      if (e.persisted) {
+        doc.classList.remove("leaving", "arriving");
+        if (doc.classList.contains("menu-open")) setMenu(false);
+      }
     });
   }
 

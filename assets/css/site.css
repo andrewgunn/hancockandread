@@ -659,6 +659,10 @@ ul.areas { padding: 0; margin: 28px 0 0; }
 .nav-links, .nav-phone { transition: opacity 0.4s ease; }
 .menu-open .nav-links, .menu-open .nav-phone { opacity: 0; pointer-events: none; }
 .js.motion.arriving .curtain { animation: curtain-out 0.9s cubic-bezier(0.76, 0, 0.24, 1) 0.05s both; }
-.js.motion.arriving .curtain img { opacity: 1; animation: curtain-logo 0.4s ease both; }
+.js.motion.arriving .curtain img { animation: curtain-logo-out 0.35s ease both; }
+.js.motion.leaving .curtain { animation: curtain-in 0.7s cubic-bezier(0.76, 0, 0.24, 1) both; }
+.js.motion.leaving .curtain img { animation: curtain-logo-in 0.4s ease 0.3s both; }
+@keyframes curtain-in { from { transform: translateY(100%); } to { transform: translateY(0); } }
 @keyframes curtain-out { from { transform: translateY(0); } to { transform: translateY(-100%); } }
-@keyframes curtain-logo { to { opacity: 0; } }
+@keyframes curtain-logo-in { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: none; } }
+@keyframes curtain-logo-out { from { opacity: 1; } to { opacity: 0; } }
