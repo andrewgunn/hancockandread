@@ -404,6 +404,31 @@ function quoteSlider() {
 </section>`;
 }
 
+
+const GOOGLE_URL = "https://www.google.com/maps/place/Hancock+%26+Read+Ltd/@53.3952533,-1.4722257,17z/data=!4m6!3m5!1s0x487978639d977cf5:0x5fcf462ccfb2d72d!8m2!3d53.3952533!4d-1.4722257!16s%2Fg%2F1td9d8jz";
+// Copied by hand from the Google Business listing (4.9 stars, 10 reviews; 3 have written text)
+const GOOGLE_REVIEWS = [
+  { who: "David Johnson", text: "Can't get better than Hancock &amp; Read. Professional friendly people. We've had 3 kitchens and a built in bookcase unit from them." },
+  { who: "Jonathan Roberts", text: "Mark and the team was amazing start to finish. They really made my vision come to life and I am incredibly happy with the end result. The quality is amazing." },
+  { who: "Andrew Bilko", text: "We've just had our kitchen completed and we are absolutely over the moon with it. Lee, Nick and the team offered great advice throughout the project and the communication was excellent. The quality of work and attention to detail is amazing. I highly recommend Hancock and Read and will be using them again." },
+];
+const STARS = '<span class="g-stars" aria-label="5 out of 5 stars">' + '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.5L12 17.3 6.1 20.5l1.3-6.5L2.5 9.4l6.6-.8z"/></svg>'.repeat(5) + "</span>";
+function googleReviews(cls = "") {
+  return `
+<section class="section${cls ? " " + cls : ""}">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h-l split-lines" data-split>Google reviews</h2>
+      <a class="g-score" href="${GOOGLE_URL}" target="_blank" rel="noopener" data-reveal><b>4.9</b>${STARS}<span>10 reviews on Google</span></a>
+    </div>
+    <div class="g-grid">
+      ${GOOGLE_REVIEWS.map((r) => `<figure class="g-card" data-reveal>${STARS}<blockquote>${r.text}</blockquote><figcaption>${r.who}</figcaption></figure>`).join("\n      ")}
+    </div>
+    <div style="margin-top:40px" data-reveal><a class="link-line" href="${GOOGLE_URL}" target="_blank" rel="noopener">Read all reviews on Google ${ICON.arrow}</a></div>
+  </div>
+</section>`;
+}
+
 const AREAS = ["Sheffield", "Dore", "Whirlow", "Hope Valley", "South Yorkshire", "Derbyshire", "Manchester", "Leicestershire", "Nottinghamshire"];
 
 /* ---------- Pages ---------- */
@@ -552,8 +577,9 @@ pages.push({
 </section>
 
 ${quoteSlider()}
+${googleReviews("tone")}
 
-<section class="section tone">
+<section class="section">
   <div class="wrap">
     <ul class="areas" data-reveal>${AREAS.map((a) => `<li>${a}</li>`).join("")}</ul>
     <p class="lede" style="margin-top:32px" data-reveal>Word of mouth now takes us to Manchester, Leicestershire and Nottinghamshire as well as Sheffield and the surrounding area.</p>
@@ -681,7 +707,7 @@ ${cta(p)}`),
 pages.push({
   route: "testimonials/",
   title: `Testimonials | ${TITLE_SUFFIX}`,
-  description: "Read what our customers say about Hancock & Read's bespoke kitchens, wardrobes, bathrooms and office furniture, and the craftsmen who made and fitted them.",
+  description: "Read what our customers say about Hancock & Read, rated 4.9 on Google, and our bespoke kitchens, wardrobes, bathrooms and office furniture.",
   preload: "img-3344",
   ld: [crumbLd([["", "Home"], ["testimonials/", "Testimonials"]])],
   body: (p) => shell(p, "testimonials/", `
@@ -697,6 +723,7 @@ ${pageHero(p, { h1: "Testimonials", intro: "Please read our testimonials for an 
     </article>`).join("\n    ")}
   </div>
 </section>
+${googleReviews("tone")}
 ${cta(p, { title: "Talk to us about your project" })}`),
 });
 
