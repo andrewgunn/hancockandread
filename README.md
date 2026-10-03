@@ -2,7 +2,7 @@
 
 Redesigned website for [Hancock & Read](https://hancockandread.co.uk), bespoke furniture designers and makers in Sheffield since 1985.
 
-A static site with no framework, hosted on GitHub Pages. GSAP, ScrollTrigger, SplitText and Lenis are vendored in `assets/vendor`. Fonts are self-hosted (Cormorant Garamond and Jost).
+A static site with no framework, hosted on GitHub Pages. GSAP, ScrollTrigger and SplitText are vendored in `assets/vendor`. Fonts are self-hosted (Cormorant Garamond and Jost).
 
 ## Build
 

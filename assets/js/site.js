@@ -16,17 +16,9 @@
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
-  /* ---------- Smooth scroll ---------- */
-  var lenis = null;
-  if (motion && typeof window.Lenis !== "undefined") {
-    lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
-    lenis.on("scroll", ScrollTrigger.update);
-    gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
-    gsap.ticker.lagSmoothing(0);
-  }
+  /* ---------- Scroll lock ---------- */
   function lockScroll(on) {
     document.body.classList.toggle("is-locked", on);
-    if (lenis) on ? lenis.stop() : lenis.start();
   }
 
   /* ---------- Header ---------- */
@@ -221,7 +213,7 @@
         x: function () { return -dist(); }, ease: "none",
         scrollTrigger: {
           trigger: section, start: "top top", end: function () { return "+=" + dist(); },
-          pin: true, scrub: 1, invalidateOnRefresh: true, anticipatePin: 1
+          pin: true, scrub: true, invalidateOnRefresh: true, anticipatePin: 1
         }
       });
       gsap.to(".process-progress i", { scaleX: 1, ease: "none", scrollTrigger: { trigger: section, start: "top top", end: function () { return "+=" + dist(); }, scrub: true } });

@@ -331,7 +331,6 @@ ${body(p)}
 <script src="${p}assets/vendor/gsap.min.js" defer></script>
 <script src="${p}assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="${p}assets/vendor/SplitText.min.js" defer></script>
-<script src="${p}assets/vendor/lenis.min.js" defer></script>
 <script src="${p}assets/js/site.js?v=${VERSION}" defer></script>
 </body>
 </html>
