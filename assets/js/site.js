@@ -169,33 +169,38 @@
     var slides = $$(".hero-slide", hero);
     var tabs = $$(".hero-index button", hero);
     if (slides.length < 2) return;
-    var i = 0, timer, running = true, DUR = 6.5;
+    var i = 0, inView = true, barTween = null, DUR = 6.5;
     gsap.set(slides, { opacity: 0 });
     gsap.set(slides[0], { opacity: 1 });
+    // The progress bar is the timer: when it fills, the next room shows
     function bar(n) {
+      if (barTween) barTween.kill();
       tabs.forEach(function (t, k) {
         var b = $("i", t);
         gsap.killTweensOf(b);
-        t.toggleAttribute("aria-current", k === n);
+        if (k === n) t.setAttribute("aria-current", "true"); else t.removeAttribute("aria-current");
         gsap.set(b, { scaleX: k < n ? 1 : 0 });
       });
-      gsap.fromTo($("i", tabs[n]), { scaleX: 0 }, { scaleX: 1, duration: DUR, ease: "none" });
+      barTween = gsap.fromTo($("i", tabs[n]), { scaleX: 0 }, { scaleX: 1, duration: DUR, ease: "none", onComplete: function () { go(i + 1); } });
+      if (!inView) barTween.pause();
     }
     function go(n) {
       var prev = slides[i];
       i = (n + slides.length) % slides.length;
       var next = slides[i];
+      if (next === prev) return;
+      gsap.killTweensOf(next);
       gsap.set(next, { zIndex: 2 });
       gsap.set(prev, { zIndex: 1 });
       gsap.fromTo(next, { opacity: 0, scale: 1.12 }, { opacity: 1, scale: 1, duration: 1.6, ease: "power2.inOut", onComplete: function () { gsap.set(prev, { opacity: 0 }); } });
       bar(i);
-      schedule();
     }
-    function schedule() { clearTimeout(timer); if (running) timer = setTimeout(function () { go(i + 1); }, DUR * 1000); }
     tabs.forEach(function (t, k) { t.addEventListener("click", function () { if (k !== i) go(k); }); });
-    ScrollTrigger.create({ trigger: hero, start: "top top", end: "bottom top", onToggle: function (self) { running = self.isActive; if (running) schedule(); else clearTimeout(timer); } });
-    document.addEventListener("visibilitychange", function () { running = !document.hidden; if (running) schedule(); else clearTimeout(timer); });
-    intro.add(function () { bar(0); schedule(); }, 1.2);
+    ScrollTrigger.create({
+      trigger: hero, start: "top bottom", end: "bottom top",
+      onToggle: function (self) { inView = self.isActive; if (barTween) inView ? barTween.resume() : barTween.pause(); }
+    });
+    intro.add(function () { bar(0); }, 1.2);
   }
 
   function scrollAnims() {
