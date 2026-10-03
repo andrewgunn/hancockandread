@@ -404,7 +404,7 @@ function quoteSlider() {
 </section>`;
 }
 
-const AREAS = ["Sheffield", "Dore", "Whirlow", "Hope Valley", "South Yorkshire", "Derbyshire", "Manchester", "Leicestershire", "<em>Nottinghamshire</em>"];
+const AREAS = ["Sheffield", "Dore", "Whirlow", "Hope Valley", "South Yorkshire", "Derbyshire", "Manchester", "Leicestershire", "Nottinghamshire"];
 
 /* ---------- Pages ---------- */
 const pages = [];
@@ -514,7 +514,7 @@ pages.push({
         ["studys/", "Studies", "img-3268", "Desks, shelving &amp; libraries"],
       ].map(([r, h, s, sub]) => `<a class="room" href="${p}${r}" data-reveal data-cursor="Explore">
         ${img(p, s, { alt: ALTS[s], sizes: "(max-width: 760px) 100vw, 60vw" })}
-        <div class="room-body"><div><small>${sub}</small><h3>${h}</h3></div><span class="arrow" aria-hidden="true">${ICON.arrow}</span></div>
+        <div class="room-body"><div><h3>${h}</h3></div><span class="arrow" aria-hidden="true">${ICON.arrow}</span></div>
       </a>`).join("\n      ")}
     </div>
     <div class="also" data-reveal>
