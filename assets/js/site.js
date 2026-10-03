@@ -130,7 +130,7 @@
       gsap.set(h1, { visibility: "visible" });
       tl.from(split.lines, { yPercent: 110, duration: 1.3, ease: "power4.out", stagger: 0.09 }, 0.15);
     }
-    tl.from($$(".crumbs, .hero-bottom > *, .page-hero p", hero), { y: 24, opacity: 0, duration: 1, ease: "power3.out", stagger: 0.08 }, 0.45);
+    tl.from($$(".hero-rating, .crumbs, .hero-bottom > *, .page-hero p", hero), { y: 24, opacity: 0, duration: 1, ease: "power3.out", stagger: 0.08 }, 0.45);
     if (img) {
       gsap.to(img, { yPercent: 14, ease: "none", scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true } });
     }

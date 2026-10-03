@@ -666,3 +666,28 @@ ul.areas { padding: 0; margin: 28px 0 0; }
 .g-card blockquote { margin: 18px 0 22px; font-family: var(--serif); font-size: clamp(1.2rem, 1.5vw, 1.45rem); line-height: 1.45; }
 .g-card figcaption { font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
 @media (max-width: 900px) { .g-grid { grid-template-columns: 1fr; } }
+.hero-rating { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 14px; border-radius: 999px; background: rgba(20, 16, 13, 0.35); box-shadow: inset 0 0 0 1px rgba(246, 242, 235, 0.3); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); font-size: 0.85rem; transition: background 0.3s ease; }
+.hero-rating:hover { background: rgba(20, 16, 13, 0.6); }
+.hero-rating b { font-family: var(--serif); font-weight: 500; font-size: 1.35rem; line-height: 1; }
+.hero-rating .g-stars svg { width: 14px; height: 14px; }
+.hero-rating span:last-child { color: rgba(246, 242, 235, 0.85); }
+
+/* Trust strip */
+.trust { background: var(--ink); color: var(--paper); border-top: 1px solid var(--line-light); }
+.trust-row { display: grid; grid-template-columns: repeat(4, 1fr); }
+.trust-item { display: flex; flex-direction: column; gap: 4px; padding: clamp(20px, 2.6vw, 32px) clamp(12px, 2vw, 28px); border-left: 1px solid var(--line-light); }
+.trust-item:first-child { border-left: 0; padding-left: 0; }
+.trust-item b { display: flex; align-items: center; gap: 10px; font-family: var(--serif); font-weight: 400; font-size: clamp(1.25rem, 1.8vw, 1.6rem); line-height: 1.1; }
+.trust-item span { font-size: 0.85rem; color: rgba(246, 242, 235, 0.65); }
+a.trust-item:hover span { color: var(--paper); text-decoration: underline; text-underline-offset: 3px; }
+.trust-item .g-stars svg { width: 14px; height: 14px; }
+@media (max-width: 860px) {
+  .trust-row { grid-template-columns: 1fr 1fr; }
+  .trust-item:nth-child(3) { border-left: 0; padding-left: 0; }
+  .trust-item:nth-child(n+3) { border-top: 1px solid var(--line-light); }
+}
+.quote figcaption .g-stars { vertical-align: -2px; margin-right: 6px; }
+.quote figcaption .g-stars svg, .letter-who .g-stars svg { width: 13px; height: 13px; }
+.letter-who .g-stars { vertical-align: -1px; margin-right: 6px; }
+.review-summary { padding-bottom: clamp(40px, 5vw, 64px); }
+.g-score { flex-wrap: wrap; }

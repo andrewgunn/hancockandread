@@ -379,32 +379,6 @@ const TESTIMONIALS = [
   },
 ];
 
-function quoteSlider() {
-  return `
-<section class="section">
-  <div class="wrap">
-    <div class="cols-2">
-      <div>
-        <h2 class="h-l split-lines" data-split style="margin-top:18px">What our customers say</h2>
-      </div>
-      <div class="quotes" data-reveal>
-        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <div class="quote-slides" aria-live="polite">
-          ${TESTIMONIALS.map((t, i) => `<figure class="quote${i === 0 ? " is-active" : ""}"><blockquote>${t.short}</blockquote><figcaption>${t.who}<span>${t.where}</span></figcaption></figure>`).join("\n          ")}
-        </div>
-        <div class="quote-nav">
-          <button class="q-prev" type="button" aria-label="Previous testimonial">${ICON.left}</button>
-          <button class="q-next" type="button" aria-label="Next testimonial">${ICON.arrow}</button>
-          <span class="quote-count">1 / ${TESTIMONIALS.length}</span>
-          <span class="quote-bar" aria-hidden="true"><i></i></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>`;
-}
-
-
 const GOOGLE_URL = "https://www.google.com/maps/place/Hancock+%26+Read+Ltd/@53.3952533,-1.4722257,17z/data=!4m6!3m5!1s0x487978639d977cf5:0x5fcf462ccfb2d72d!8m2!3d53.3952533!4d-1.4722257!16s%2Fg%2F1td9d8jz";
 // Copied by hand from the Google Business listing (4.9 stars, 10 reviews; 3 have written text)
 const GOOGLE_REVIEWS = [
@@ -413,18 +387,35 @@ const GOOGLE_REVIEWS = [
   { who: "Andrew Bilko", text: "We've just had our kitchen completed and we are absolutely over the moon with it. Lee, Nick and the team offered great advice throughout the project and the communication was excellent. The quality of work and attention to detail is amazing. I highly recommend Hancock and Read and will be using them again." },
 ];
 const STARS = '<span class="g-stars" aria-label="5 out of 5 stars">' + '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.5L12 17.3 6.1 20.5l1.3-6.5L2.5 9.4l6.6-.8z"/></svg>'.repeat(5) + "</span>";
-function googleReviews(cls = "") {
+
+// Letters and Google reviews shown together, most recent first
+const REVIEWS = [
+  ...GOOGLE_REVIEWS.map((r) => ({ who: r.who, google: true, short: r.text, body: [r.text] })),
+  ...TESTIMONIALS,
+];
+
+function quoteSlider(cls = "") {
   return `
 <section class="section${cls ? " " + cls : ""}">
   <div class="wrap">
-    <div class="sec-head">
-      <h2 class="h-l split-lines" data-split>Google reviews</h2>
-      <a class="g-score" href="${GOOGLE_URL}" target="_blank" rel="noopener" data-reveal><b>4.9</b>${STARS}<span>10 reviews on Google</span></a>
+    <div class="cols-2">
+      <div>
+        <h2 class="h-l split-lines" data-split>What our customers say</h2>
+        <a class="g-score" href="${GOOGLE_URL}" target="_blank" rel="noopener" data-reveal style="margin-top:28px"><b>4.9</b>${STARS}<span>10 reviews on Google</span></a>
+      </div>
+      <div class="quotes" data-reveal>
+        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+        <div class="quote-slides" aria-live="polite">
+          ${REVIEWS.map((t, i) => `<figure class="quote${i === 0 ? " is-active" : ""}"><blockquote>${t.short}</blockquote><figcaption>${t.who}<span>${t.google ? `${STARS} Google review` : t.where}</span></figcaption></figure>`).join("\n          ")}
+        </div>
+        <div class="quote-nav">
+          <button class="q-prev" type="button" aria-label="Previous review">${ICON.left}</button>
+          <button class="q-next" type="button" aria-label="Next review">${ICON.arrow}</button>
+          <span class="quote-count">1 / ${REVIEWS.length}</span>
+          <span class="quote-bar" aria-hidden="true"><i></i></span>
+        </div>
+      </div>
     </div>
-    <div class="g-grid">
-      ${GOOGLE_REVIEWS.map((r) => `<figure class="g-card" data-reveal>${STARS}<blockquote>${r.text}</blockquote><figcaption>${r.who}</figcaption></figure>`).join("\n      ")}
-    </div>
-    <div style="margin-top:40px" data-reveal><a class="link-line" href="${GOOGLE_URL}" target="_blank" rel="noopener">Read all reviews on Google ${ICON.arrow}</a></div>
   </div>
 </section>`;
 }
@@ -451,6 +442,7 @@ pages.push({
 <section class="hero">
   <div class="hero-media">${img(p, "img-3278", { alt: ALTS["img-3278"], eager: true, base: 2000 })}</div>
   <div class="hero-content wrap">
+    <a class="hero-rating" href="${GOOGLE_URL}" target="_blank" rel="noopener"><b>4.9</b>${STARS}<span>10 Google reviews</span></a>
     <h1 class="split-lines">Bespoke furniture, <em>made by hand</em> in Sheffield</h1>
     <div class="hero-bottom">
       <p>Kitchens, bedrooms, bathrooms and studies, designed in our studio, built in our own workshop and fitted by the same craftsmen who made them.</p>
@@ -461,6 +453,15 @@ pages.push({
     </div>
   </div>
   <span class="scroll-cue" aria-hidden="true">Scroll</span>
+</section>
+
+<section class="trust" aria-label="Why customers trust us">
+  <div class="wrap trust-row">
+    <a class="trust-item" href="${GOOGLE_URL}" target="_blank" rel="noopener"><b>4.9 ${STARS}</b><span>10 reviews on Google</span></a>
+    <div class="trust-item"><b>Since 1985</b><span>40 years in business</span></div>
+    <div class="trust-item"><b>Made in Sheffield</b><span>In our own workshop</span></div>
+    <div class="trust-item"><b>Fitted by the makers</b><span>The people who make it, fit it</span></div>
+  </div>
 </section>
 
 <div class="marquee" aria-hidden="true">
@@ -478,7 +479,10 @@ pages.push({
   </div>
 </section>
 
-<section class="section tone">
+${quoteSlider("tone")}
+
+
+<section class="section">
   <div class="wrap split">
     <div class="split-media">
       <div class="frame frame--tall" data-reveal-img>${img(p, "nef-0189", { alt: ALTS["nef-0189"], sizes: "(max-width: 900px) 100vw, 50vw", attrs: 'data-speed="0.08"' })}</div>
@@ -576,8 +580,6 @@ pages.push({
   </div>
 </section>
 
-${quoteSlider()}
-${googleReviews("tone")}
 
 <section class="section">
   <div class="wrap">
@@ -714,8 +716,9 @@ pages.push({
 ${pageHero(p, { h1: "Testimonials", intro: "Please read our testimonials for an idea of the quality of the craftsmanship we can, and do, provide for our customers.", image: "img-3344", alt: ALTS["img-3344"], short: true, trail: [["", "Home"], ["testimonials/", "Testimonials"]] })}
 <section class="section">
   <div class="wrap">
-    ${TESTIMONIALS.map((t, i) => `<article class="letter">
-      <div class="letter-who" data-reveal><span class="n">0${i + 1}</span><h2>${t.who}</h2><p>${t.where}</p></div>
+    <div class="review-summary" data-reveal><a class="g-score" href="${GOOGLE_URL}" target="_blank" rel="noopener"><b>4.9</b>${STARS}<span>10 reviews on Google</span></a></div>
+    ${REVIEWS.map((t, i) => `<article class="letter">
+      <div class="letter-who" data-reveal><span class="n">0${i + 1}</span><h2>${t.who}</h2><p>${t.google ? `${STARS} Google review` : t.where}</p></div>
       <div class="letter-body" data-reveal>
         ${t.salute ? `<p class="salute">${t.salute}</p>` : ""}
         ${t.body.map((b) => `<p>${b}</p>`).join("\n        ")}
@@ -723,7 +726,6 @@ ${pageHero(p, { h1: "Testimonials", intro: "Please read our testimonials for an 
     </article>`).join("\n    ")}
   </div>
 </section>
-${googleReviews("tone")}
 ${cta(p, { title: "Talk to us about your project" })}`),
 });
 
