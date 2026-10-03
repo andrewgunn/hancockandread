@@ -78,6 +78,7 @@
     if (!href || href.charAt(0) === "#" || /^(mailto|tel):/.test(href)) return false;
     if (a.origin !== location.origin) return false;
     if (a.pathname === location.pathname && a.hash) return false;
+    if (/\.(webp|jpe?g|png|pdf|xml)$/i.test(a.pathname)) return false;
     return true;
   }
   if (motion && curtain) {
@@ -91,7 +92,7 @@
     }
     document.addEventListener("click", function (e) {
       var a = e.target.closest("a");
-      if (!isInternal(a) || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      if (e.defaultPrevented || !isInternal(a) || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
       e.preventDefault();
       var go = function () { location.href = a.href; };
       try { sessionStorage.setItem("hr-transition", "1"); } catch (err) {}
