@@ -37,8 +37,8 @@
     if (!header) return;
     header.classList.toggle("is-solid", y > 40);
     if (!doc.classList.contains("menu-open")) {
-      header.classList.toggle("is-hidden", y > 400 && y > lastY + 2);
-      if (y < lastY - 2) header.classList.remove("is-hidden");
+      if (y > 400 && y > lastY + 2) header.classList.add("is-hidden");
+      else if (y < lastY - 2 || y <= 400) header.classList.remove("is-hidden");
     }
     lastY = y;
   }

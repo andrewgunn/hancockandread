@@ -656,3 +656,5 @@ ul.areas { padding: 0; margin: 28px 0 0; }
   .filters::-webkit-scrollbar { display: none; }
   .filters a, .filters button { flex: none; }
 }
+.nav-links, .nav-phone { transition: opacity 0.4s ease; }
+.menu-open .nav-links, .menu-open .nav-phone { opacity: 0; pointer-events: none; }
