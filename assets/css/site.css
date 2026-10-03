@@ -311,7 +311,7 @@ em { font-style: italic; }
 
 /* Marquee */
 .marquee { overflow: hidden; border-block: 1px solid var(--line); padding: clamp(18px, 2.6vw, 32px) 0; background: var(--paper); }
-.marquee-track { display: flex; width: max-content; animation: marquee 48s linear infinite; }
+.marquee-track { display: flex; width: max-content; animation: marquee 24s linear infinite; }
 .marquee-track span { font-family: var(--serif); font-size: clamp(2rem, 4.6vw, 4.2rem); line-height: 1; white-space: nowrap; padding-right: 0.5em; }
 .marquee-track .amp { padding-right: 0.5em; }
 @keyframes marquee { to { transform: translateX(-50%); } }
