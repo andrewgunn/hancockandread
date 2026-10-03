@@ -1,0 +1,1311 @@
+{
+ "8248578-interior09-800-web": {
+  "cat": "kitchen",
+  "orig": "8248578-interior09-800-web.jpg",
+  "w": 1024,
+  "h": 683,
+  "dominant": {
+   "r": 216,
+   "g": 216,
+   "b": 216
+  }
+ },
+ "8248578-interior02-800-web": {
+  "cat": "kitchen",
+  "orig": "8248578-interior02-800-web.jpg",
+  "w": 1024,
+  "h": 683,
+  "dominant": {
+   "r": 200,
+   "g": 200,
+   "b": 184
+  }
+ },
+ "8252198-interior08-800-web": {
+  "cat": "kitchen",
+  "orig": "8252198-interior08-800-web.jpg",
+  "w": 1024,
+  "h": 683,
+  "dominant": {
+   "r": 232,
+   "g": 216,
+   "b": 216
+  }
+ },
+ "8252198-interior13-800-web": {
+  "cat": "kitchen",
+  "orig": "8252198-interior13-800-web.jpg",
+  "w": 1024,
+  "h": 683,
+  "dominant": {
+   "r": 8,
+   "g": 8,
+   "b": 8
+  }
+ },
+ "ilp7255": {
+  "cat": "kitchen",
+  "orig": "ILP7255.jpeg",
+  "w": 1183,
+  "h": 788,
+  "dominant": {
+   "r": 200,
+   "g": 184,
+   "b": 168
+  }
+ },
+ "ilp7240": {
+  "cat": "kitchen",
+  "orig": "ILP7240.jpeg",
+  "w": 764,
+  "h": 1148,
+  "dominant": {
+   "r": 168,
+   "g": 136,
+   "b": 24
+  }
+ },
+ "img-1389": {
+  "cat": "kitchen",
+  "orig": "IMG_1389.jpg",
+  "w": 3264,
+  "h": 2448,
+  "dominant": {
+   "r": 152,
+   "g": 136,
+   "b": 120
+  }
+ },
+ "img-2817": {
+  "cat": "kitchen",
+  "orig": "IMG_2817.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 184,
+   "g": 184,
+   "b": 184
+  }
+ },
+ "img-2823-2": {
+  "cat": "kitchen",
+  "orig": "IMG_2823-2.jpg",
+  "w": 3777,
+  "h": 2569,
+  "dominant": {
+   "r": 120,
+   "g": 120,
+   "b": 104
+  }
+ },
+ "img-2827": {
+  "cat": "kitchen",
+  "orig": "IMG_2827.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 168,
+   "g": 168,
+   "b": 168
+  }
+ },
+ "img-3031": {
+  "cat": "kitchen",
+  "orig": "IMG_3031.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 248,
+   "g": 248,
+   "b": 248
+  }
+ },
+ "img-3021": {
+  "cat": "kitchen",
+  "orig": "IMG_3021.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 104,
+   "g": 88,
+   "b": 72
+  }
+ },
+ "img-3042": {
+  "cat": "kitchen",
+  "orig": "IMG_3042.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 24,
+   "g": 24,
+   "b": 24
+  }
+ },
+ "img-3038": {
+  "cat": "kitchen",
+  "orig": "IMG_3038.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 168,
+   "g": 152,
+   "b": 136
+  }
+ },
+ "img-3046": {
+  "cat": "kitchen",
+  "orig": "IMG_3046.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 200,
+   "g": 184,
+   "b": 168
+  }
+ },
+ "img-3047": {
+  "cat": "kitchen",
+  "orig": "IMG_3047.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 40,
+   "g": 40,
+   "b": 40
+  }
+ },
+ "img-3051": {
+  "cat": "kitchen",
+  "orig": "IMG_3051.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 24,
+   "g": 24,
+   "b": 24
+  }
+ },
+ "img-3058": {
+  "cat": "kitchen",
+  "orig": "IMG_3058.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 248,
+   "g": 248,
+   "b": 248
+  }
+ },
+ "img-3050": {
+  "cat": "kitchen",
+  "orig": "IMG_3050.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 8,
+   "g": 8,
+   "b": 8
+  }
+ },
+ "img-3056": {
+  "cat": "kitchen",
+  "orig": "IMG_3056.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 24,
+   "g": 24,
+   "b": 24
+  }
+ },
+ "img-3061": {
+  "cat": "kitchen",
+  "orig": "IMG_3061.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 200,
+   "g": 184,
+   "b": 168
+  }
+ },
+ "img-3062": {
+  "cat": "kitchen",
+  "orig": "IMG_3062.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 200,
+   "g": 184,
+   "b": 168
+  }
+ },
+ "img-3063": {
+  "cat": "kitchen",
+  "orig": "IMG_3063.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 24,
+   "g": 24,
+   "b": 24
+  }
+ },
+ "img-3064": {
+  "cat": "kitchen",
+  "orig": "IMG_3064.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 24,
+   "g": 24,
+   "b": 24
+  }
+ },
+ "img-3068": {
+  "cat": "kitchen",
+  "orig": "IMG_3068.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 248,
+   "g": 248,
+   "b": 248
+  }
+ },
+ "img-3072": {
+  "cat": "kitchen",
+  "orig": "IMG_3072.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 248,
+   "g": 248,
+   "b": 248
+  }
+ },
+ "img-3264": {
+  "cat": "kitchen",
+  "orig": "IMG_3264.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 40,
+   "g": 40,
+   "b": 40
+  }
+ },
+ "img-3270": {
+  "cat": "kitchen",
+  "orig": "IMG_3270.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 72,
+   "g": 72,
+   "b": 72
+  }
+ },
+ "img-3274": {
+  "cat": "kitchen",
+  "orig": "IMG_3274.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 152,
+   "g": 152,
+   "b": 152
+  }
+ },
+ "img-3273": {
+  "cat": "kitchen",
+  "orig": "IMG_3273.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 56,
+   "g": 56,
+   "b": 56
+  }
+ },
+ "img-3277": {
+  "cat": "kitchen",
+  "orig": "IMG_3277.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 168,
+   "g": 168,
+   "b": 168
+  }
+ },
+ "img-3278": {
+  "cat": "kitchen",
+  "orig": "IMG_3278.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 24,
+   "g": 24,
+   "b": 24
+  }
+ },
+ "img-3279": {
+  "cat": "kitchen",
+  "orig": "IMG_3279.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 24,
+   "g": 24,
+   "b": 24
+  }
+ },
+ "img-3280": {
+  "cat": "kitchen",
+  "orig": "IMG_3280.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 56,
+   "g": 56,
+   "b": 56
+  }
+ },
+ "img-3281-2": {
+  "cat": "kitchen",
+  "orig": "IMG_3281-2.jpg",
+  "w": 4784,
+  "h": 3189,
+  "dominant": {
+   "r": 24,
+   "g": 24,
+   "b": 24
+  }
+ },
+ "img-3298": {
+  "cat": "kitchen",
+  "orig": "IMG_3298.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 88,
+   "g": 104,
+   "b": 104
+  }
+ },
+ "img-3299": {
+  "cat": "kitchen",
+  "orig": "IMG_3299.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 248,
+   "g": 248,
+   "b": 248
+  }
+ },
+ "img-3301": {
+  "cat": "kitchen",
+  "orig": "IMG_3301.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 8,
+   "g": 8,
+   "b": 8
+  }
+ },
+ "img-3300": {
+  "cat": "kitchen",
+  "orig": "IMG_3300.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 40,
+   "g": 24,
+   "b": 24
+  }
+ },
+ "img-3302": {
+  "cat": "kitchen",
+  "orig": "IMG_3302.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 248,
+   "g": 248,
+   "b": 248
+  }
+ },
+ "img-3303-1": {
+  "cat": "kitchen",
+  "orig": "IMG_3303-1.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 248,
+   "g": 248,
+   "b": 248
+  }
+ },
+ "img-3304": {
+  "cat": "kitchen",
+  "orig": "IMG_3304.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 248,
+   "g": 248,
+   "b": 248
+  }
+ },
+ "img-3303": {
+  "cat": "kitchen",
+  "orig": "IMG_3303.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 248,
+   "g": 248,
+   "b": 248
+  }
+ },
+ "img-3307-1": {
+  "cat": "kitchen",
+  "orig": "IMG_3307-1.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 168,
+   "g": 152,
+   "b": 136
+  }
+ },
+ "img-3308-scaled": {
+  "cat": "kitchen",
+  "orig": "IMG_3308-scaled.jpg",
+  "w": 2560,
+  "h": 1707,
+  "dominant": {
+   "r": 248,
+   "g": 248,
+   "b": 248
+  }
+ },
+ "img-3313": {
+  "cat": "kitchen",
+  "orig": "IMG_3313.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 136,
+   "g": 120,
+   "b": 104
+  }
+ },
+ "img-3307": {
+  "cat": "kitchen",
+  "orig": "IMG_3307.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 168,
+   "g": 152,
+   "b": 136
+  }
+ },
+ "img-3315": {
+  "cat": "kitchen",
+  "orig": "IMG_3315.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 200,
+   "g": 200,
+   "b": 200
+  }
+ },
+ "img-3344": {
+  "cat": "kitchen",
+  "orig": "IMG_3344.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 152,
+   "g": 152,
+   "b": 136
+  }
+ },
+ "img-3345": {
+  "cat": "kitchen",
+  "orig": "IMG_3345.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 216,
+   "g": 200,
+   "b": 184
+  }
+ },
+ "img-3348": {
+  "cat": "kitchen",
+  "orig": "IMG_3348.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 168,
+   "g": 168,
+   "b": 168
+  }
+ },
+ "img-3350": {
+  "cat": "kitchen",
+  "orig": "IMG_3350.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 200,
+   "g": 184,
+   "b": 168
+  }
+ },
+ "img-3369-1": {
+  "cat": "kitchen",
+  "orig": "IMG_3369-1.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 248,
+   "g": 248,
+   "b": 248
+  }
+ },
+ "img-3357": {
+  "cat": "kitchen",
+  "orig": "IMG_3357.jpg",
+  "w": 3456,
+  "h": 5184,
+  "dominant": {
+   "r": 88,
+   "g": 88,
+   "b": 72
+  }
+ },
+ "img-3374-1": {
+  "cat": "kitchen",
+  "orig": "IMG_3374-1.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 200,
+   "g": 200,
+   "b": 200
+  }
+ },
+ "img-3367": {
+  "cat": "kitchen",
+  "orig": "IMG_3367.jpg",
+  "w": 3456,
+  "h": 5184,
+  "dominant": {
+   "r": 152,
+   "g": 152,
+   "b": 136
+  }
+ },
+ "img-3375": {
+  "cat": "kitchen",
+  "orig": "IMG_3375.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 248,
+   "g": 248,
+   "b": 248
+  }
+ },
+ "img-3376": {
+  "cat": "kitchen",
+  "orig": "IMG_3376.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 88,
+   "g": 88,
+   "b": 88
+  }
+ },
+ "img-3384": {
+  "cat": "kitchen",
+  "orig": "IMG_3384.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 104,
+   "g": 88,
+   "b": 72
+  }
+ },
+ "img-3394": {
+  "cat": "kitchen",
+  "orig": "IMG_3394.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 248,
+   "g": 248,
+   "b": 248
+  }
+ },
+ "img-3413": {
+  "cat": "kitchen",
+  "orig": "IMG_3413.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 200,
+   "g": 200,
+   "b": 200
+  }
+ },
+ "img-3403": {
+  "cat": "kitchen",
+  "orig": "IMG_3403.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 248,
+   "g": 248,
+   "b": 248
+  }
+ },
+ "img-3412": {
+  "cat": "kitchen",
+  "orig": "IMG_3412.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 104,
+   "g": 104,
+   "b": 104
+  }
+ },
+ "img-3417": {
+  "cat": "kitchen",
+  "orig": "IMG_3417.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 216,
+   "g": 216,
+   "b": 216
+  }
+ },
+ "img-3402": {
+  "cat": "kitchen",
+  "orig": "IMG_3402.jpg",
+  "w": 3456,
+  "h": 5184,
+  "dominant": {
+   "r": 200,
+   "g": 200,
+   "b": 184
+  }
+ },
+ "img-3428": {
+  "cat": "kitchen",
+  "orig": "IMG_3428.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 88,
+   "g": 104,
+   "b": 120
+  }
+ },
+ "img-3429": {
+  "cat": "kitchen",
+  "orig": "IMG_3429.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 88,
+   "g": 88,
+   "b": 104
+  }
+ },
+ "img-3431": {
+  "cat": "kitchen",
+  "orig": "IMG_3431.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 104,
+   "g": 88,
+   "b": 88
+  }
+ },
+ "img-4076": {
+  "cat": "kitchen",
+  "orig": "IMG_4076.jpg",
+  "w": 2048,
+  "h": 1536,
+  "dominant": {
+   "r": 200,
+   "g": 184,
+   "b": 168
+  }
+ },
+ "img-3445": {
+  "cat": "kitchen",
+  "orig": "IMG_3445.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 104,
+   "g": 88,
+   "b": 72
+  }
+ },
+ "img-4080": {
+  "cat": "kitchen",
+  "orig": "IMG_4080.jpg",
+  "w": 2048,
+  "h": 1536,
+  "dominant": {
+   "r": 24,
+   "g": 24,
+   "b": 24
+  }
+ },
+ "img-4093": {
+  "cat": "kitchen",
+  "orig": "IMG_4093.jpg",
+  "w": 2048,
+  "h": 1536,
+  "dominant": {
+   "r": 88,
+   "g": 88,
+   "b": 88
+  }
+ },
+ "img-4101": {
+  "cat": "kitchen",
+  "orig": "IMG_4101.jpg",
+  "w": 1536,
+  "h": 2048,
+  "dominant": {
+   "r": 168,
+   "g": 168,
+   "b": 152
+  }
+ },
+ "img-4670-1": {
+  "cat": "kitchen",
+  "orig": "IMG_4670-1.jpg",
+  "w": 1183,
+  "h": 788,
+  "dominant": {
+   "r": 184,
+   "g": 184,
+   "b": 200
+  }
+ },
+ "img-4671-1": {
+  "cat": "kitchen",
+  "orig": "IMG_4671-1.jpg",
+  "w": 1024,
+  "h": 683,
+  "dominant": {
+   "r": 200,
+   "g": 200,
+   "b": 200
+  }
+ },
+ "img-4667-1": {
+  "cat": "kitchen",
+  "orig": "IMG_4667-1.jpg",
+  "w": 4928,
+  "h": 3280,
+  "dominant": {
+   "r": 152,
+   "g": 152,
+   "b": 152
+  }
+ },
+ "img-4674-1": {
+  "cat": "kitchen",
+  "orig": "IMG_4674-1.jpg",
+  "w": 3264,
+  "h": 2448,
+  "dominant": {
+   "r": 184,
+   "g": 184,
+   "b": 184
+  }
+ },
+ "img-4673-1": {
+  "cat": "kitchen",
+  "orig": "IMG_4673-1.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 152,
+   "g": 136,
+   "b": 120
+  }
+ },
+ "img-4672-1": {
+  "cat": "kitchen",
+  "orig": "IMG_4672-1.jpg",
+  "w": 4094,
+  "h": 3441,
+  "dominant": {
+   "r": 104,
+   "g": 120,
+   "b": 88
+  }
+ },
+ "img-4676-1": {
+  "cat": "kitchen",
+  "orig": "IMG_4676-1.jpg",
+  "w": 3532,
+  "h": 2733,
+  "dominant": {
+   "r": 40,
+   "g": 24,
+   "b": 24
+  }
+ },
+ "img-4680-1": {
+  "cat": "kitchen",
+  "orig": "IMG_4680-1.jpg",
+  "w": 4135,
+  "h": 2812,
+  "dominant": {
+   "r": 184,
+   "g": 184,
+   "b": 184
+  }
+ },
+ "img-4678-1": {
+  "cat": "kitchen",
+  "orig": "IMG_4678-1.jpg",
+  "w": 2448,
+  "h": 3264,
+  "dominant": {
+   "r": 200,
+   "g": 200,
+   "b": 200
+  }
+ },
+ "img-4681-1": {
+  "cat": "kitchen",
+  "orig": "IMG_4681-1.jpg",
+  "w": 3264,
+  "h": 2448,
+  "dominant": {
+   "r": 184,
+   "g": 200,
+   "b": 200
+  }
+ },
+ "img-4682-1": {
+  "cat": "kitchen",
+  "orig": "IMG_4682-1.jpg",
+  "w": 3192,
+  "h": 3016,
+  "dominant": {
+   "r": 120,
+   "g": 104,
+   "b": 72
+  }
+ },
+ "img-4683-1": {
+  "cat": "kitchen",
+  "orig": "IMG_4683-1.jpg",
+  "w": 4032,
+  "h": 3024,
+  "dominant": {
+   "r": 120,
+   "g": 104,
+   "b": 72
+  }
+ },
+ "img-4972-1": {
+  "cat": "kitchen",
+  "orig": "IMG_4972-1.jpg",
+  "w": 3264,
+  "h": 2448,
+  "dominant": {
+   "r": 136,
+   "g": 120,
+   "b": 104
+  }
+ },
+ "img-4974": {
+  "cat": "kitchen",
+  "orig": "IMG_4974.jpg",
+  "w": 2448,
+  "h": 3264,
+  "dominant": {
+   "r": 120,
+   "g": 104,
+   "b": 88
+  }
+ },
+ "img-4976": {
+  "cat": "kitchen",
+  "orig": "IMG_4976.jpg",
+  "w": 2448,
+  "h": 3264,
+  "dominant": {
+   "r": 136,
+   "g": 120,
+   "b": 104
+  }
+ },
+ "img-4978": {
+  "cat": "kitchen",
+  "orig": "IMG_4978.jpg",
+  "w": 2448,
+  "h": 3264,
+  "dominant": {
+   "r": 104,
+   "g": 88,
+   "b": 72
+  }
+ },
+ "img-4977": {
+  "cat": "kitchen",
+  "orig": "IMG_4977.jpg",
+  "w": 2448,
+  "h": 3264,
+  "dominant": {
+   "r": 232,
+   "g": 216,
+   "b": 200
+  }
+ },
+ "img-4979": {
+  "cat": "kitchen",
+  "orig": "IMG_4979.jpg",
+  "w": 2448,
+  "h": 3264,
+  "dominant": {
+   "r": 136,
+   "g": 120,
+   "b": 104
+  }
+ },
+ "img-4982-1": {
+  "cat": "kitchen",
+  "orig": "IMG_4982-1.jpg",
+  "w": 3264,
+  "h": 2448,
+  "dominant": {
+   "r": 56,
+   "g": 40,
+   "b": 24
+  }
+ },
+ "nef-0211": {
+  "cat": "kitchen",
+  "orig": "NEF_0211.jpg",
+  "w": 4928,
+  "h": 3280,
+  "dominant": {
+   "r": 152,
+   "g": 152,
+   "b": 136
+  }
+ },
+ "nef-0192": {
+  "cat": "kitchen",
+  "orig": "NEF_0192.jpg",
+  "w": 2433,
+  "h": 3645,
+  "dominant": {
+   "r": 8,
+   "g": 40,
+   "b": 72
+  }
+ },
+ "nef-0276": {
+  "cat": "kitchen",
+  "orig": "NEF_0276.jpg",
+  "w": 3680,
+  "h": 2456,
+  "dominant": {
+   "r": 56,
+   "g": 56,
+   "b": 56
+  }
+ },
+ "p3060841": {
+  "cat": "kitchen",
+  "orig": "P3060841.jpg",
+  "w": 4032,
+  "h": 3024,
+  "dominant": {
+   "r": 120,
+   "g": 104,
+   "b": 88
+  }
+ },
+ "nef-0189": {
+  "cat": "kitchen",
+  "orig": "NEF_0189.jpg",
+  "w": 3280,
+  "h": 4928,
+  "dominant": {
+   "r": 40,
+   "g": 40,
+   "b": 40
+  }
+ },
+ "img-2814": {
+  "cat": "bedroom",
+  "orig": "IMG_2814.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 88,
+   "g": 88,
+   "b": 72
+  }
+ },
+ "p3060846": {
+  "cat": "kitchen",
+  "orig": "P3060846.jpg",
+  "w": 3024,
+  "h": 4032,
+  "dominant": {
+   "r": 136,
+   "g": 120,
+   "b": 88
+  }
+ },
+ "p3060848-2": {
+  "cat": "kitchen",
+  "orig": "P3060848-2.jpg",
+  "w": 3192,
+  "h": 3016,
+  "dominant": {
+   "r": 120,
+   "g": 104,
+   "b": 72
+  }
+ },
+ "img-3286": {
+  "cat": "bedroom",
+  "orig": "IMG_3286.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 168,
+   "g": 168,
+   "b": 168
+  }
+ },
+ "img-3283": {
+  "cat": "bedroom",
+  "orig": "IMG_3283.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 168,
+   "g": 168,
+   "b": 168
+  }
+ },
+ "img-3287": {
+  "cat": "bedroom",
+  "orig": "IMG_3287.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 136,
+   "g": 136,
+   "b": 136
+  }
+ },
+ "img-3290": {
+  "cat": "bedroom",
+  "orig": "IMG_3290.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 136,
+   "g": 136,
+   "b": 136
+  }
+ },
+ "img-3291": {
+  "cat": "bedroom",
+  "orig": "IMG_3291.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 152,
+   "g": 152,
+   "b": 152
+  }
+ },
+ "img-3292": {
+  "cat": "bedroom",
+  "orig": "IMG_3292.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 136,
+   "g": 136,
+   "b": 136
+  }
+ },
+ "img-3321": {
+  "cat": "bedroom",
+  "orig": "IMG_3321.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 136,
+   "g": 120,
+   "b": 88
+  }
+ },
+ "img-3447": {
+  "cat": "bedroom",
+  "orig": "IMG_3447.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 72,
+   "g": 72,
+   "b": 72
+  }
+ },
+ "img-5874": {
+  "cat": "bedroom",
+  "orig": "IMG_5874.jpg",
+  "w": 1200,
+  "h": 1600,
+  "dominant": {
+   "r": 40,
+   "g": 24,
+   "b": 56
+  }
+ },
+ "img-2076": {
+  "cat": "bathroom",
+  "orig": "IMG_2076.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 40,
+   "g": 40,
+   "b": 40
+  }
+ },
+ "img-2088": {
+  "cat": "bathroom",
+  "orig": "IMG_2088.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 40,
+   "g": 24,
+   "b": 24
+  }
+ },
+ "img-3319": {
+  "cat": "bathroom",
+  "orig": "IMG_3319.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 168,
+   "g": 152,
+   "b": 136
+  }
+ },
+ "img-2080": {
+  "cat": "bathroom",
+  "orig": "IMG_2080.jpg",
+  "w": 3456,
+  "h": 5184,
+  "dominant": {
+   "r": 88,
+   "g": 88,
+   "b": 88
+  }
+ },
+ "img-3048": {
+  "cat": "extra",
+  "orig": "IMG_3048.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 232,
+   "g": 232,
+   "b": 232
+  }
+ },
+ "img-3268": {
+  "cat": "study",
+  "orig": "IMG_3268.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 152,
+   "g": 152,
+   "b": 152
+  }
+ },
+ "img-3304-2": {
+  "cat": "extra",
+  "orig": "IMG_3304-2.jpg",
+  "w": 4389,
+  "h": 2926,
+  "dominant": {
+   "r": 248,
+   "g": 248,
+   "b": 248
+  }
+ },
+ "img-3305-2": {
+  "cat": "extra",
+  "orig": "IMG_3305-2.jpg",
+  "w": 4485,
+  "h": 2990,
+  "dominant": {
+   "r": 168,
+   "g": 168,
+   "b": 168
+  }
+ },
+ "img-3305": {
+  "cat": "extra",
+  "orig": "IMG_3305.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 120,
+   "g": 104,
+   "b": 104
+  }
+ },
+ "img-3308": {
+  "cat": "extra",
+  "orig": "IMG_3308.jpg",
+  "w": 5184,
+  "h": 3456,
+  "dominant": {
+   "r": 248,
+   "g": 248,
+   "b": 248
+  }
+ }
+}
