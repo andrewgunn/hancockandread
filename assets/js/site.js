@@ -84,11 +84,13 @@
   if (motion && curtain) {
     var arrived = false;
     try { arrived = sessionStorage.getItem("hr-transition") === "1"; sessionStorage.removeItem("hr-transition"); } catch (e) {}
-    if (arrived) {
-      gsap.set(curtain, { y: 0, yPercent: 0 });
-      gsap.to(curtain, { yPercent: -100, duration: 1, ease: "power4.inOut", delay: 0.05, onComplete: function () { doc.classList.remove("arriving"); } });
+    // The reveal on arrival is a CSS animation (.arriving) so it never waits on scripts
+    gsap.set(curtain, { y: 0, yPercent: 100 });
+    if (arrived && doc.classList.contains("arriving")) {
+      var settle = function () { doc.classList.remove("arriving"); };
+      curtain.addEventListener("animationend", settle, { once: true });
+      setTimeout(settle, 2500);
     } else {
-      gsap.set(curtain, { y: 0, yPercent: 100 });
       doc.classList.remove("arriving");
     }
     document.addEventListener("click", function (e) {
