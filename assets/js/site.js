@@ -236,7 +236,7 @@
 
     // Magnetic buttons
     if (finePointer) {
-      $$(".btn, .room .arrow, .quote-nav button").forEach(function (b) {
+      $$(".btn, .room .arrow, .rv-nav button").forEach(function (b) {
         var xTo = gsap.quickTo(b, "x", { duration: 0.6, ease: "power3" });
         var yTo = gsap.quickTo(b, "y", { duration: 0.6, ease: "power3" });
         b.addEventListener("mousemove", function (e) {
@@ -266,33 +266,24 @@
     });
   }
 
-  /* ---------- Testimonials ---------- */
+  /* ---------- Reviews track ---------- */
   function quotes() {
-    var root = $(".quotes");
-    if (!root) return;
-    var slides = $$(".quote", root);
-    var count = $(".quote-count", root);
-    var bar = $(".quote-bar i", root);
-    var i = 0, timer = null;
-    function show(n) {
-      i = (n + slides.length) % slides.length;
-      slides.forEach(function (s, j) { s.classList.toggle("is-active", j === i); s.setAttribute("aria-hidden", j === i ? "false" : "true"); });
-      if (count) count.textContent = (i + 1) + " / " + slides.length;
-      if (bar && !reduce) { bar.classList.remove("run"); void bar.offsetWidth; bar.classList.add("run"); }
-      clearTimeout(timer);
-      if (!reduce) timer = setTimeout(function () { show(i + 1); }, 8000);
-    }
-    $(".q-prev", root).addEventListener("click", function () { show(i - 1); });
-    $(".q-next", root).addEventListener("click", function () { show(i + 1); });
-    var sx = null;
-    root.addEventListener("touchstart", function (e) { sx = e.touches[0].clientX; }, { passive: true });
-    root.addEventListener("touchend", function (e) {
-      if (sx === null) return;
-      var dx = e.changedTouches[0].clientX - sx;
-      if (Math.abs(dx) > 50) show(i + (dx < 0 ? 1 : -1));
-      sx = null;
+    $$(".reviews").forEach(function (root) {
+      var track = $(".rv-track", root), prev = $(".rv-prev", root), next = $(".rv-next", root);
+      if (!track) return;
+      function step() { var c = $(".rv-card", track); return c ? c.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0) : 400; }
+      function sync() {
+        var max = track.scrollWidth - track.clientWidth - 2;
+        prev.disabled = track.scrollLeft <= 2;
+        next.disabled = track.scrollLeft >= max;
+        $(".rv-nav", root).hidden = max <= 0;
+      }
+      prev.addEventListener("click", function () { track.scrollBy({ left: -step(), behavior: reduce ? "auto" : "smooth" }); });
+      next.addEventListener("click", function () { track.scrollBy({ left: step(), behavior: reduce ? "auto" : "smooth" }); });
+      track.addEventListener("scroll", sync, { passive: true });
+      window.addEventListener("resize", sync);
+      sync();
     });
-    show(0);
   }
 
   /* ---------- Gallery filter + lightbox ---------- */

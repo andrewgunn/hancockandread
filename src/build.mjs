@@ -396,26 +396,23 @@ const REVIEWS = [
 
 function quoteSlider(cls = "") {
   return `
-<section class="section${cls ? " " + cls : ""}">
-  <div class="wrap">
-    <div class="cols-2">
-      <div>
-        <h2 class="h-l split-lines" data-split>What our customers say</h2>
-        <a class="g-score" href="${GOOGLE_URL}" target="_blank" rel="noopener" data-reveal style="margin-top:28px"><b>4.9</b>${STARS}<span>10 reviews on Google</span></a>
-      </div>
-      <div class="quotes" data-reveal>
-        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <div class="quote-slides" aria-live="polite">
-          ${REVIEWS.map((t, i) => `<figure class="quote${i === 0 ? " is-active" : ""}"><blockquote>${t.short}</blockquote><figcaption>${t.who}<span>${t.google ? `${STARS} Google review` : t.where}</span></figcaption></figure>`).join("\n          ")}
-        </div>
-        <div class="quote-nav">
-          <button class="q-prev" type="button" aria-label="Previous review">${ICON.left}</button>
-          <button class="q-next" type="button" aria-label="Next review">${ICON.arrow}</button>
-          <span class="quote-count">1 / ${REVIEWS.length}</span>
-          <span class="quote-bar" aria-hidden="true"><i></i></span>
-        </div>
-      </div>
+<section class="section reviews${cls ? " " + cls : ""}">
+  <div class="wrap rv-head">
+    <div>
+      <h2 class="h-l split-lines" data-split>What our customers say</h2>
+      <a class="g-score" href="${GOOGLE_URL}" target="_blank" rel="noopener" data-reveal><b>4.9</b>${STARS}<span>10 reviews on Google</span></a>
     </div>
+    <div class="rv-nav" data-reveal>
+      <button class="rv-prev" type="button" aria-label="Previous reviews">${ICON.left}</button>
+      <button class="rv-next" type="button" aria-label="Next reviews">${ICON.arrow}</button>
+    </div>
+  </div>
+  <div class="rv-track" tabindex="0" aria-label="Customer reviews">
+    ${REVIEWS.map((t) => `<figure class="rv-card" data-reveal>
+      ${t.google ? STARS : '<span class="rv-mark" aria-hidden="true">&ldquo;</span>'}
+      <blockquote>${t.short}</blockquote>
+      <figcaption><b>${t.who}</b><span>${t.google ? "Google review" : t.where}</span></figcaption>
+    </figure>`).join("\n    ")}
   </div>
 </section>`;
 }
