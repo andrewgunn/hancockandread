@@ -749,3 +749,6 @@ a.trust-item:hover span { color: var(--paper); text-decoration: underline; text-
   .hero-bottom p { font-size: 0.92rem; }
   .hero-actions .btn { padding: 14px 22px; }
 }
+@media (max-height: 780px) and (min-width: 641px) {
+  .hero h1 { max-width: 15ch; font-size: clamp(2.4rem, min(7.6vw, 11svh), 8rem); }
+}
