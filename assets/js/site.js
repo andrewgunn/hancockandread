@@ -192,7 +192,8 @@
       gsap.killTweensOf(next);
       gsap.set(next, { zIndex: 2 });
       gsap.set(prev, { zIndex: 1 });
-      gsap.fromTo(next, { opacity: 0, scale: 1.12 }, { opacity: 1, scale: 1, duration: 1.6, ease: "power2.inOut", onComplete: function () { gsap.set(prev, { opacity: 0 }); } });
+      gsap.fromTo(next, { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out", onComplete: function () { gsap.set(prev, { opacity: 0 }); } });
+      gsap.fromTo(next, { scale: 1.08 }, { scale: 1, duration: DUR + 1, ease: "none" });
       bar(i);
     }
     tabs.forEach(function (t, k) { t.addEventListener("click", function () { if (k !== i) go(k); }); });

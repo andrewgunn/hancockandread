@@ -441,7 +441,7 @@ pages.push({
 <section class="hero">
   <div class="hero-media">
     <div class="hero-slides">
-      ${HERO_SLIDES.map(([s], i) => img(p, s, { alt: ALTS[s], eager: i === 0, base: 2000, cls: "hero-slide" + (i === 0 ? " is-active" : "") })).join("\n      ")}
+      ${HERO_SLIDES.map(([s], i) => img(p, s, { alt: ALTS[s], eager: i === 0, base: 2000, cls: "hero-slide" + (i === 0 ? " is-active" : "") }).replace(' loading="lazy"', ' fetchpriority="low"')).join("\n      ")}
     </div>
   </div>
   <div class="hero-doors" aria-hidden="true"><i></i><i></i></div>
