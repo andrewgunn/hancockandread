@@ -214,27 +214,25 @@ function crumbs(p, items) {
   return `<ol class="crumbs">${items.map(([r, l], i) => (i < items.length - 1 ? `<li><a href="${p}${r}">${l}</a></li>` : `<li aria-current="page">${l}</li>`)).join("")}</ol>`;
 }
 
-function pageHero(p, { eyebrow, h1, intro, image, alt, short, trail }) {
+function pageHero(p, { h1, intro, image, alt, short, trail }) {
   return `
 <section class="page-hero${short ? " page-hero--short" : ""}">
   ${image ? `<div class="hero-media">${img(p, image, { alt: alt || "", eager: true, base: 2000 })}</div>` : ""}
   <div class="wrap">
     ${trail ? crumbs(p, trail) : ""}
-    ${eyebrow ? `<span class="eyebrow">${eyebrow}</span>` : ""}
     <h1 class="split-lines">${h1}</h1>
     ${intro ? `<p>${intro}</p>` : ""}
   </div>
 </section>`;
 }
 
-function cta(p, { title = "Let's make something <em>that lasts.</em>", text } = {}) {
+function cta(p, { title = "Talk to us about your project", text } = {}) {
   return `
 <section class="cta section">
   <img class="cta-mono" src="${p}assets/brand/icon-512.png" width="512" height="512" alt="" aria-hidden="true" loading="lazy">
   <div class="wrap">
-    <span class="eyebrow">Start your project</span>
     <h2 class="split-lines" data-split>${title}</h2>
-    <p>${text || "Come and see us at the workshop, or invite us round. We'll talk through your ideas, measure up and design something made for your home."}</p>
+    <p>${text || "Call us or send a message and we'll arrange a time to talk through your ideas."}</p>
     <div class="cta-actions">
       <a class="btn btn--light" href="${p}contact-us/">Get in touch ${ICON.arrow}</a>
       <a class="btn btn--ghost" href="tel:${BIZ.telHref}">${ICON.phone} ${BIZ.tel}</a>
@@ -387,8 +385,7 @@ function quoteSlider() {
   <div class="wrap">
     <div class="cols-2">
       <div>
-        <span class="eyebrow" data-reveal>In their words</span>
-        <h2 class="h-l split-lines" data-split style="margin-top:18px">Most of our work comes <em>by recommendation.</em></h2>
+        <h2 class="h-l split-lines" data-split style="margin-top:18px">What our customers say</h2>
       </div>
       <div class="quotes" data-reveal>
         <span class="quote-mark" aria-hidden="true">&ldquo;</span>
@@ -429,8 +426,7 @@ pages.push({
 <section class="hero">
   <div class="hero-media">${img(p, "img-3278", { alt: ALTS["img-3278"], eager: true, base: 2000 })}</div>
   <div class="hero-content wrap">
-    <span class="eyebrow">Designers &amp; makers since 1985</span>
-    <h1 class="split-lines">Bespoke furniture, <em>made by hand</em> in Sheffield.</h1>
+    <h1 class="split-lines">Bespoke furniture, <em>made by hand</em> in Sheffield</h1>
     <div class="hero-bottom">
       <p>Kitchens, bedrooms, bathrooms and studies, designed in our studio, built in our own workshop and fitted by the same craftsmen who made them.</p>
       <div class="hero-actions">
@@ -449,10 +445,9 @@ pages.push({
 </div>
 
 <section class="section">
-  <div class="wrap statement-meta">
-    <div><span class="eyebrow" data-reveal>Our way</span></div>
+  <div class="wrap">
     <div>
-      <p class="statement" data-words>We design it. We make it in our own Sheffield workshop. Then the craftsmen who built it come and fit it in your home. No middlemen, no flat-pack, just furniture made properly by people who care how it turns out.</p>
+      <p class="statement" data-words>We design your furniture, make it in our own workshop in Sheffield, and the craftsmen who made it come and fit it in your home.</p>
       <div style="margin-top:48px" data-reveal><a class="link-line" href="${p}what-we-do/">Why Hancock &amp; Read ${ICON.arrow}</a></div>
     </div>
   </div>
@@ -468,8 +463,7 @@ pages.push({
       </div>
     </div>
     <div class="split-copy">
-      <span class="eyebrow" data-reveal>About us</span>
-      <h2 class="h-l split-lines" data-split>Four decades of <em>quiet craft.</em></h2>
+      <h2 class="h-l split-lines" data-split>About us</h2>
       <div class="lede" data-reveal>
         <p>Hancock &amp; Read have provided a prestigious design and making service for decades, and are renowned around Dore, Whirlow, Hope Valley and across South Yorkshire and Derbyshire for quality residential and commercial furniture.</p>
         <p>We started in 1985 handcrafting bars, reception desks and shop interiors. As the demand for kitchens and bedrooms grew, so did our workshop, which now houses our own design studio.</p>
@@ -483,17 +477,16 @@ pages.push({
   <div class="section" style="padding-bottom:clamp(80px,10vw,140px)">
     <div class="wrap process-head">
       <div>
-        <span class="eyebrow" data-reveal>From sketch to fitted</span>
-        <h2 class="h-l split-lines" data-split style="margin-top:18px">One team, <em>start to finish.</em></h2>
+        <h2 class="h-l split-lines" data-split style="margin-top:18px">From design to fitting</h2>
       </div>
-      <p class="lede" data-reveal style="max-width:26em">The same small team looks after your project from the first conversation to the final fitting. Nothing is handed off.</p>
+      <p class="lede" data-reveal style="max-width:26em">The same team looks after your project from the first visit to the final fitting.</p>
     </div>
     <div class="process-track">
       ${[
-        ["01", "Design", "We visit, measure and listen. Then our in-house studio draws furniture made for your room, the way you live and nothing else.", "img-3344"],
+        ["01", "Design", "We visit, measure up and talk through what you want. Our in-house design studio then draws up your furniture.", "img-3344"],
         ["02", "Make", "Everything is built in our Sheffield workshop the traditional way, with mortise and tenon joints, in hardwoods, veneers, stone, glass and metal.", "img-3429"],
-        ["03", "Fit", "The craftsmen who made your furniture are the ones who fit it. They know every joint, so every line sits true, and they tidy up after themselves.", "img-3058"],
-        ["04", "Live with it", "Years later it still looks the way it did on the day it went in. That's why so much of our work comes from repeat customers and their friends.", "img-3307"],
+        ["03", "Fit", "The craftsmen who made your furniture are the ones who fit it in your home.", "img-3058"],
+        ["04", "Live with it", "The majority of our projects come from repeat customers or recommendation.", "img-3307"],
       ].map(([n, h, t, s]) => `<article class="step">
         <div class="frame">${img(p, s, { alt: ALTS[s] || "", sizes: "(max-width: 900px) 100vw, 560px" })}</div>
         <span class="step-num">${n}</span>
@@ -509,10 +502,9 @@ pages.push({
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <span class="eyebrow" data-reveal>What we make</span>
-        <h2 class="h-l split-lines" data-split>Made for <em>every room.</em></h2>
+        <h2 class="h-l split-lines" data-split>What we make</h2>
       </div>
-      <p data-reveal>From ultra modern to traditional, we make pieces that blend sympathetically with what you have, or contrast with it on purpose.</p>
+      <p data-reveal>From ultra modern to traditional, we can make something that blends in with your existing furniture or intentionally contrasts against it.</p>
     </div>
     <div class="rooms">
       ${[
@@ -542,7 +534,6 @@ pages.push({
       <div class="stat" data-reveal><b data-count="1985" data-from="1900">1985</b><span>The year we opened our workshop doors in Sheffield</span></div>
       <div class="stat" data-reveal><b data-count="40" data-suffix="+">40+</b><span>Years designing, making and fitting</span></div>
       <div class="stat" data-reveal><b data-count="100" data-suffix="%">100%</b><span>Made in our own Sheffield workshop</span></div>
-      <div class="stat" data-reveal><b>1 of 1</b><span>Every project is a one-off, made to suit you</span></div>
     </div>
   </div>
 </section>
@@ -554,8 +545,7 @@ pages.push({
   </div>
   <div class="columns-overlay">
     <div>
-      <span class="eyebrow">The gallery</span>
-      <h2 id="lwys" class="split-lines" data-split>Like what <em>you see?</em></h2>
+      <h2 id="lwys" class="split-lines" data-split>Like what you see?</h2>
       <a class="btn btn--light" href="${p}gallery/">Explore the gallery ${ICON.arrow}</a>
     </div>
   </div>
@@ -565,9 +555,8 @@ ${quoteSlider()}
 
 <section class="section tone">
   <div class="wrap">
-    <span class="eyebrow" data-reveal>Where we work</span>
     <ul class="areas" data-reveal>${AREAS.map((a) => `<li>${a}</li>`).join("")}</ul>
-    <p class="lede" style="margin-top:32px" data-reveal>Word of mouth has taken us well beyond Sheffield. Wherever you are, the people who make your furniture will be the ones who fit it.</p>
+    <p class="lede" style="margin-top:32px" data-reveal>Word of mouth now takes us to Manchester, Leicestershire and Nottinghamshire as well as Sheffield and the surrounding area.</p>
   </div>
 </section>
 
@@ -582,13 +571,12 @@ pages.push({
   preload: "img-3058",
   ld: [crumbLd([["", "Home"], ["about/", "About"]])],
   body: (p) => shell(p, "about/", `
-${pageHero(p, { eyebrow: "Our story", h1: "Made in Sheffield <em>since 1985.</em>", intro: "A family of designers, joiners and fitters who have spent four decades making furniture for homes across South Yorkshire, Derbyshire and beyond.", image: "img-3058", alt: ALTS["img-3058"], trail: [["", "Home"], ["about/", "About"]] })}
+${pageHero(p, { h1: "About Hancock &amp; Read", intro: "Designers and makers of bespoke furniture for homes and businesses across South Yorkshire, Derbyshire and beyond.", image: "img-3058", alt: ALTS["img-3058"], trail: [["", "Home"], ["about/", "About"]] })}
 
 <section class="section">
-  <div class="wrap statement-meta">
-    <div><span class="eyebrow" data-reveal>About Hancock &amp; Read</span></div>
+  <div class="wrap">
     <div>
-      <p class="statement" data-words>The people who make your furniture are the people who fit it. That simple idea has guided everything we've done since 1985.</p>
+      <p class="statement" data-words>The people who make your furniture are the people who fit it, and it has been that way since 1985.</p>
     </div>
   </div>
 </section>
@@ -597,8 +585,7 @@ ${pageHero(p, { eyebrow: "Our story", h1: "Made in Sheffield <em>since 1985.</em
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <span class="eyebrow" data-reveal>How we got here</span>
-        <h2 class="h-l split-lines" data-split>A workshop that <em>grew by word of mouth.</em></h2>
+        <h2 class="h-l split-lines" data-split>Our history</h2>
       </div>
     </div>
     <ol class="timeline">
@@ -614,12 +601,11 @@ ${pageHero(p, { eyebrow: "Our story", h1: "Made in Sheffield <em>since 1985.</em
   <div class="wrap split">
     <div class="split-media"><div class="frame frame--tall" data-reveal-img>${img(p, "img-3429", { alt: ALTS["img-3429"], sizes: "(max-width: 900px) 100vw, 50vw", attrs: 'data-speed="0.08"' })}</div></div>
     <div class="split-copy">
-      <span class="eyebrow" data-reveal>What we believe</span>
-      <h2 class="h-l split-lines" data-split>Built properly, <em>built to last.</em></h2>
+      <h2 class="h-l split-lines" data-split>How we work</h2>
       <div class="features" style="grid-template-columns:1fr;margin-top:36px">
-        <div class="feature" data-reveal><span class="n">i.</span><h3>Made here</h3><p>Every piece is made in our own workshop on Rugby Street in Sheffield. We don't buy in carcasses or doors.</p></div>
-        <div class="feature" data-reveal><span class="n">ii.</span><h3>Fitted by the makers</h3><p>The craftsmen who build your furniture are the ones who install it, so nothing gets lost between workshop and home.</p></div>
-        <div class="feature" data-reveal><span class="n">iii.</span><h3>Made to be lived with</h3><p>Traditional joints, honest materials and a finish that still looks the same a year on, as our customers keep telling us.</p></div>
+        <div class="feature" data-reveal><span class="n">i.</span><h3>Made here</h3><p>Every piece is made in our own workshop on Rugby Street in Sheffield.</p></div>
+        <div class="feature" data-reveal><span class="n">ii.</span><h3>Fitted by the makers</h3><p>The craftsmen who build your furniture are the ones who install it.</p></div>
+        <div class="feature" data-reveal><span class="n">iii.</span><h3>Made the traditional way</h3><p>Traditional mortise and tenon construction, with a wide choice of woods, colours, door fronts, worktops and handles.</p></div>
       </div>
     </div>
   </div>
@@ -637,13 +623,12 @@ pages.push({
   preload: "img-3431",
   ld: [crumbLd([["", "Home"], ["what-we-do/", "Why Hancock and Read?"]])],
   body: (p) => shell(p, "what-we-do/", `
-${pageHero(p, { eyebrow: "What we do", h1: "Why Hancock <em>&amp; Read?</em>", intro: "We specialise in both free-standing and fitted handmade furniture of superior quality, from ultra modern to traditional.", image: "img-3431", alt: ALTS["img-3431"], trail: [["", "Home"], ["what-we-do/", "Why Hancock and Read?"]] })}
+${pageHero(p, { h1: "Why Hancock &amp; Read?", intro: "We specialise in both free-standing and fitted handmade furniture of superior quality, from ultra modern to traditional.", image: "img-3431", alt: ALTS["img-3431"], trail: [["", "Home"], ["what-we-do/", "Why Hancock and Read?"]] })}
 
 <section class="section">
   <div class="wrap split">
     <div class="split-copy">
-      <span class="eyebrow" data-reveal>Our speciality</span>
-      <h2 class="h-l split-lines" data-split>In-frame. Face-fixed. <em>Mortise &amp; tenon.</em></h2>
+      <h2 class="h-l split-lines" data-split>Our speciality</h2>
       <div class="lede" data-reveal>
         <p>We are widely appreciated for our skill at handcrafting quality 'In Frame' and 'Face Fixed' Shaker style furniture, constructed the traditional way with mortise and tenon joints. Every project is a one-off, as everything is made to suit your taste.</p>
         <p>With a wide range of woods, colours, door fronts, worktops and handles to choose from, your space can be truly unique.</p>
@@ -657,8 +642,7 @@ ${pageHero(p, { eyebrow: "What we do", h1: "Why Hancock <em>&amp; Read?</em>", i
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <span class="eyebrow" data-reveal>Materials</span>
-        <h2 class="h-l split-lines" data-split>Whatever the brief, <em>the right material.</em></h2>
+        <h2 class="h-l split-lines" data-split>Materials</h2>
       </div>
       <p data-reveal>We take pride in our skill at incorporating many materials within our design and manufacture, so we can make something that blends in sympathetically with your existing furniture, or intentionally contrasts against it.</p>
     </div>
@@ -672,8 +656,7 @@ ${pageHero(p, { eyebrow: "What we do", h1: "Why Hancock <em>&amp; Read?</em>", i
 <section class="section">
   <div class="wrap cols-2">
     <div>
-      <span class="eyebrow" data-reveal>Our work includes</span>
-      <h2 class="h-l split-lines" data-split style="margin-top:18px">If it's made of wood, <em>ask us.</em></h2>
+      <h2 class="h-l split-lines" data-split style="margin-top:18px">Our work includes</h2>
       <p class="lede" data-reveal style="margin-top:28px">Our services have included kitchens, offices, bedrooms, bathrooms, commercial projects and much, much more.</p>
     </div>
     <ul class="list-lines" data-reveal>
@@ -702,7 +685,7 @@ pages.push({
   preload: "img-3344",
   ld: [crumbLd([["", "Home"], ["testimonials/", "Testimonials"]])],
   body: (p) => shell(p, "testimonials/", `
-${pageHero(p, { eyebrow: "Kind words", h1: "Testimonials", intro: "Please read our testimonials for an idea of the quality of the craftsmanship we can, and do, provide for our customers.", image: "img-3344", alt: ALTS["img-3344"], short: true, trail: [["", "Home"], ["testimonials/", "Testimonials"]] })}
+${pageHero(p, { h1: "Testimonials", intro: "Please read our testimonials for an idea of the quality of the craftsmanship we can, and do, provide for our customers.", image: "img-3344", alt: ALTS["img-3344"], short: true, trail: [["", "Home"], ["testimonials/", "Testimonials"]] })}
 <section class="section">
   <div class="wrap">
     ${TESTIMONIALS.map((t, i) => `<article class="letter">
@@ -714,7 +697,7 @@ ${pageHero(p, { eyebrow: "Kind words", h1: "Testimonials", intro: "Please read o
     </article>`).join("\n    ")}
   </div>
 </section>
-${cta(p, { title: "Could you be <em>our next letter?</em>" })}`),
+${cta(p, { title: "Talk to us about your project" })}`),
 });
 
 /* Room pages */
@@ -723,39 +706,39 @@ const ROOMS = [
     route: "kitchens/", name: "Kitchens", cat: "kitchens", hero: "img-4667-1",
     title: `Kitchens | ${TITLE_SUFFIX}`,
     description: "Bespoke handmade kitchens designed, built and fitted by Hancock & Read in Sheffield. In-frame Shaker, painted and contemporary kitchens, islands and dressers.",
-    h1: "Bespoke kitchens, <em>made by hand.</em>",
-    intro: "The heart of the home, and the heart of what we do. Every kitchen is drawn for your room and built in our Sheffield workshop.",
-    lead: "Kitchens that are <em>made for you.</em>",
+    h1: "Bespoke Kitchens",
+    intro: "Every kitchen is designed for your room and built in our Sheffield workshop.",
+    lead: "Kitchens made for your home",
     copy: [
-      "No two kitchens we make are the same. We start with how you cook, eat and gather, then design around the room you have, whether that's a beamed farmhouse, a period terrace or a new open-plan extension.",
+      "Every kitchen we make is designed around your room and the way you use it, whether that's a beamed farmhouse, a period terrace or a new open-plan extension.",
       "Choose from traditional in-frame and face-fixed Shaker doors built with mortise and tenon joints, or something cleaner and more contemporary. We hand-finish in any colour, and combine timber, stone, glass and metal to suit.",
     ],
-    feats: [["Islands &amp; breakfast bars", "Centrepieces with seating, storage, wine racks and integrated appliances, sized to your space."], ["Dressers &amp; display", "Glazed cabinets, open shelving and lit display dressers that bring a room to life."], ["Worktops &amp; details", "Stone, timber and composite worktops, carved mantels and the handles and hardware to finish."]],
+    feats: [["Islands &amp; breakfast bars", "Islands with seating, storage, wine racks and integrated appliances, sized to your space."], ["Dressers &amp; display", "Glazed cabinets, open shelving and lit display dressers."], ["Worktops &amp; details", "Stone, timber and composite worktops, carved mantels and the handles and hardware to finish."]],
     feature: "img-3344",
   },
   {
     route: "bedrooms/", name: "Bedrooms", cat: "bedrooms", hero: "img-3292",
     title: `Bedrooms | ${TITLE_SUFFIX}`,
     description: "Bespoke fitted bedroom furniture handmade in Sheffield: fitted wardrobes, dressing tables, walk-in wardrobes and storage built around eaves and alcoves.",
-    h1: "Fitted bedrooms, <em>beautifully made.</em>",
-    intro: "Wardrobes, dressing tables and storage built to fit your room exactly, including the awkward corners other furniture can't reach.",
-    lead: "Every inch, <em>put to good use.</em>",
+    h1: "Fitted Bedrooms",
+    intro: "Wardrobes, dressing tables and storage built to fit your room exactly.",
+    lead: "Made to fit your room",
     copy: [
-      "Bedrooms are rarely square. Sloping ceilings, chimney breasts and alcoves are where fitted furniture really earns its keep, and where made-to-measure makes all the difference.",
-      "We design floor-to-ceiling wardrobes, dressing tables and walk-in dressing rooms, then build them in our workshop and fit them ourselves, so every door closes just so.",
+      "Fitted furniture makes the most of sloping ceilings, chimney breasts and alcoves, where off-the-shelf furniture won't fit.",
+      "We design floor-to-ceiling wardrobes, dressing tables and walk-in dressing rooms, then build them in our workshop and fit them ourselves.",
     ],
-    feats: [["Fitted wardrobes", "Floor-to-ceiling, panelled or plain, with interiors planned around how you actually dress."], ["Dressing tables", "Matching dressing tables and mirrors, built in or free-standing."], ["Walk-in &amp; lit storage", "Dressing rooms and illuminated display wardrobes for shoes, bags and favourite pieces."]],
+    feats: [["Fitted wardrobes", "Floor-to-ceiling, panelled or plain, with interiors planned around what you need to store."], ["Dressing tables", "Matching dressing tables and mirrors, built in or free-standing."], ["Walk-in &amp; lit storage", "Dressing rooms and illuminated display wardrobes for shoes, bags and favourite pieces."]],
     feature: "img-5874",
   },
   {
     route: "bathrooms/", name: "Bathrooms", cat: "bathrooms", hero: "img-3319",
     title: `Bathrooms | ${TITLE_SUFFIX}`,
     description: "Bespoke bathroom furniture handmade in Sheffield by Hancock & Read: vanity units, mirrored cabinets and fitted bathroom storage built to suit your space.",
-    h1: "Bathroom furniture, <em>made to measure.</em>",
+    h1: "Bathroom Furniture",
     intro: "Vanity units, mirrored cabinets and fitted storage that make the most of every bathroom, ensuite and cloakroom.",
-    lead: "Calm, considered <em>and built to last.</em>",
+    lead: "Bathroom furniture made to fit",
     copy: [
-      "A well-made bathroom is a pleasure to use every day. We design vanity units, cabinets and storage to suit the room and the way you use it, from twin-basin family bathrooms to compact ensuites.",
+      "We design vanity units, cabinets and storage to suit the room and the way you use it, from twin-basin family bathrooms to compact ensuites.",
       "Each piece is made in our Sheffield workshop and finished to cope with a working bathroom, then fitted by the same craftsmen who built it.",
     ],
     feats: [["Vanity units", "Single and twin basin units with drawers and cupboards made to fit."], ["Mirrors &amp; cabinets", "Framed mirrors and mirrored cabinets in painted finishes or rich hardwoods."], ["Fitted storage", "Built-in cupboards and shelving, including under eaves and in alcoves."]],
@@ -765,11 +748,11 @@ const ROOMS = [
     route: "studys/", name: "Studies", cat: "studys", hero: "img-3268",
     title: `Studys | ${TITLE_SUFFIX}`,
     description: "Bespoke studies and home offices handmade in Sheffield by Hancock & Read: fitted desks, bookcases, shelving and storage designed around the way you work.",
-    h1: "Studies &amp; home offices, <em>made for focus.</em>",
-    intro: "Fitted desks, bookcases and storage that turn a spare room or a quiet corner into somewhere you'll want to work.",
-    lead: "Somewhere to <em>think clearly.</em>",
+    h1: "Studies &amp; Home Offices",
+    intro: "Fitted desks, bookcases and storage for home offices and studies.",
+    lead: "A study made for the way you work",
     copy: [
-      "More of us work from home than ever, and a properly made study makes all the difference. We design desks, shelving and storage around your room and your work, keeping cables, files and clutter out of sight.",
+      "We design desks, shelving and storage around your room and the way you work, with space for cables, files and equipment.",
       "From traditional panelled libraries to clean, contemporary home offices, every piece is made in our Sheffield workshop and fitted by our own craftsmen.",
     ],
     feats: [["Fitted desks", "Desks built to the right height and depth, with drawers and cable management."], ["Shelving &amp; bookcases", "Floor-to-ceiling shelving and alcove bookcases for books, files and favourite things."], ["Hidden storage", "Cupboards for printers, paperwork and everything else you'd rather not look at."]],
@@ -782,15 +765,14 @@ for (const r of ROOMS) {
     route: r.route, title: r.title, description: r.description, preload: r.hero, ogImage: r.hero,
     ld: [crumbLd([["", "Home"], ["what-we-do/", "Our Work"], [r.route, r.name]])],
     body: (p) => shell(p, r.route, `
-${pageHero(p, { eyebrow: "Our work", h1: r.h1, intro: r.intro, image: r.hero, alt: ALTS[r.hero], trail: [["", "Home"], ["what-we-do/", "Our Work"], [r.route, r.name]] })}
+${pageHero(p, { h1: r.h1, intro: r.intro, image: r.hero, alt: ALTS[r.hero], trail: [["", "Home"], ["what-we-do/", "Our Work"], [r.route, r.name]] })}
 
 <section class="section">
   <div class="wrap split">
     <div class="split-copy">
-      <span class="eyebrow" data-reveal>${r.name}</span>
       <h2 class="h-l split-lines" data-split>${r.lead}</h2>
       <div class="lede" data-reveal>${r.copy.map((c) => `<p>${c}</p>`).join("")}</div>
-      <div data-reveal><a class="btn" href="${p}contact-us/">Talk to us about your ${CATS[r.cat].one.toLowerCase()} ${ICON.arrow}</a></div>
+      <div data-reveal><a class="btn" href="${p}contact-us/">Get in touch ${ICON.arrow}</a></div>
     </div>
     <div class="split-media"><div class="frame frame--tall" data-reveal-img>${img(p, r.feature, { alt: ALTS[r.feature], sizes: "(max-width: 900px) 100vw, 50vw", attrs: 'data-speed="0.08"' })}</div></div>
   </div>
@@ -800,8 +782,7 @@ ${pageHero(p, { eyebrow: "Our work", h1: r.h1, intro: r.intro, image: r.hero, al
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <span class="eyebrow" data-reveal>What we make</span>
-        <h2 class="h-l split-lines" data-split>Designed, made <em>&amp; fitted by us.</em></h2>
+        <h2 class="h-l split-lines" data-split>What we make</h2>
       </div>
     </div>
     <div class="features">
@@ -814,8 +795,7 @@ ${pageHero(p, { eyebrow: "Our work", h1: r.h1, intro: r.intro, image: r.hero, al
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <span class="eyebrow" data-reveal>Recent ${r.name.toLowerCase()}</span>
-        <h2 class="h-l split-lines" data-split>From our <em>gallery.</em></h2>
+        <h2 class="h-l split-lines" data-split>Recent ${r.name.toLowerCase()}</h2>
       </div>
       <a class="link-line" href="${p}${CATS[r.cat].page}/" data-reveal>View the ${CATS[r.cat].one.toLowerCase()} gallery ${ICON.arrow}</a>
     </div>
@@ -856,7 +836,7 @@ for (const g of GALLERY_PAGES) {
     route: g.route, title: `${g.name} | ${TITLE_SUFFIX}`, description: g.description, preload: g.hero, ogImage: g.hero,
     ld: [crumbLd(trail)],
     body: (p) => shell(p, g.route, `
-${pageHero(p, { eyebrow: all ? "Our work" : "Gallery", h1: g.h1, intro: all ? "A selection of the kitchens, bedrooms, bathrooms and studies we've designed, made and fitted." : `${total} photographs of ${CATS[g.cats[0]].label.toLowerCase()} we've designed, made and fitted.`, image: g.hero, alt: ALTS[g.hero], short: true, trail })}
+${pageHero(p, { h1: g.h1, intro: all ? "A selection of the kitchens, bedrooms, bathrooms and studies we've designed, made and fitted." : `${total} photographs of ${CATS[g.cats[0]].label.toLowerCase()} we've designed, made and fitted.`, image: g.hero, alt: ALTS[g.hero], short: true, trail })}
 <section class="section">
   <div class="wrap">
     <div class="filters" role="${all ? "group" : "navigation"}" aria-label="${all ? "Filter gallery" : "Galleries"}">
@@ -871,7 +851,7 @@ ${pageHero(p, { eyebrow: all ? "Our work" : "Gallery", h1: g.h1, intro: all ? "A
   </div>
 </section>
 ${LIGHTBOX}
-${cta(p, { title: "Like what <em>you see?</em>", text: "Every piece in our gallery was designed, made and fitted by our own team. Let's talk about what we could make for you." })}`),
+${cta(p, { title: "Like what you see?", text: "Everything in our gallery was designed, made and fitted by our own team." })}`),
   });
 }
 
@@ -883,7 +863,7 @@ pages.push({
   preload: "img-3307",
   ld: [crumbLd([["", "Home"], ["contact-us/", "Contact Us"]])],
   body: (p) => shell(p, "contact-us/", `
-${pageHero(p, { eyebrow: "Get in touch", h1: "Contact Us", intro: "Tell us a little about your project and we'll get back to you. Or pick up the phone, we'd love to hear from you.", image: "img-3307", alt: ALTS["img-3307"], short: true, trail: [["", "Home"], ["contact-us/", "Contact Us"]] })}
+${pageHero(p, { h1: "Contact Us", intro: "Tell us about your project and we'll get back to you, or give us a call.", image: "img-3307", alt: ALTS["img-3307"], short: true, trail: [["", "Home"], ["contact-us/", "Contact Us"]] })}
 <section class="section">
   <div class="wrap contact-grid">
     <div class="contact-card">
@@ -896,7 +876,7 @@ ${pageHero(p, { eyebrow: "Get in touch", h1: "Contact Us", intro: "Tell us a lit
       </div></div>
     </div>
     <div>
-      <h2 class="h-m split-lines" data-split style="margin-bottom:36px">Tell us about <em>your project.</em></h2>
+      <h2 class="h-m split-lines" data-split style="margin-bottom:36px">Send us a message</h2>
       <form class="form" id="enquiry" data-mailto="${BIZ.email}" data-endpoint="" novalidate data-reveal>
         <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required><span class="bar"></span></div>
         <div class="field"><label for="f-email">Email Address</label><input id="f-email" name="email" type="email" autocomplete="email" required><span class="bar"></span></div>
@@ -924,7 +904,7 @@ pages.push({
   hero: false,
   ld: [crumbLd([["", "Home"], ["privacy-policy/", "Privacy Policy"]])],
   body: (p) => shell(p, "privacy-policy/", `
-${pageHero(p, { eyebrow: "The small print", h1: "Privacy Policy", short: true, trail: [["", "Home"], ["privacy-policy/", "Privacy Policy"]] })}
+${pageHero(p, { h1: "Privacy Policy", short: true, trail: [["", "Home"], ["privacy-policy/", "Privacy Policy"]] })}
 <section class="section">
   <div class="wrap">
     <div class="prose">
@@ -960,7 +940,7 @@ pages.push({
   noindex: true,
   preload: "img-3048",
   body: (p) => shell(p, "404.html", `
-${pageHero(p, { eyebrow: "404", h1: "We couldn't find <em>that page.</em>", intro: "It may have moved when we refreshed our website. Try one of these instead.", image: "img-3048", alt: "", short: true })}
+${pageHero(p, { h1: "Page not found", intro: "It may have moved when we refreshed our website. Try one of these instead.", image: "img-3048", alt: "", short: true })}
 <section class="section">
   <div class="wrap">
     <ul class="list-lines">

@@ -99,13 +99,6 @@ em { font-style: italic; }
 .dark { background: var(--ink); color: var(--paper); }
 .tone { background: var(--paper-2); }
 
-.eyebrow {
-  display: inline-flex; align-items: center; gap: 14px;
-  font-family: var(--sans); font-size: 0.75rem; font-weight: 500;
-  letter-spacing: 0.24em; text-transform: uppercase; color: var(--red);
-}
-.eyebrow::before { content: ""; width: 36px; height: 1px; background: currentColor; }
-.dark .eyebrow, .hero .eyebrow, .page-hero .eyebrow { color: var(--stone); }
 
 .amp { font-family: var(--serif); font-style: italic; color: var(--grey); font-weight: 400; }
 .red { color: var(--red); }
@@ -398,7 +391,7 @@ em { font-style: italic; }
 a.chip:hover { background: var(--ink); color: var(--paper); }
 
 /* Numbers */
-.stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
 .stat { padding: clamp(28px, 4vw, 48px) clamp(12px, 2vw, 28px) 0 0; border-right: 1px solid var(--line); }
 .stat + .stat { padding-left: clamp(16px, 2.4vw, 36px); }
 .stat:last-child { border-right: 0; }
@@ -459,7 +452,6 @@ ul.areas { padding: 0; margin: 28px 0 0; }
 .cta h2 { font-size: var(--fs-xl); font-weight: 300; margin: 20px auto 26px; max-width: 14ch; }
 .cta h2 em { color: var(--stone); }
 .cta p { max-width: 34em; margin: 0 auto 40px; color: rgba(246, 242, 235, 0.82); }
-.cta .eyebrow { color: rgba(246, 242, 235, 0.75); }
 .cta .btn--light::before { background: var(--ink); }
 .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .cta-mono { position: absolute; right: -6vw; bottom: -14vw; width: 46vw; opacity: 0.07; pointer-events: none; }
@@ -643,7 +635,6 @@ ul.areas { padding: 0; margin: 28px 0 0; }
 
 /* Polish */
 .dark .feature .n, .dark .step-num { color: var(--stone); }
-.columns-band .eyebrow { color: var(--stone); }
 .letter-body p:first-child::first-letter { float: none; font-size: inherit; line-height: inherit; padding: 0; color: inherit; }
 .letter-body p:first-child:not(.salute)::first-letter,
 .letter-body .salute + p::first-letter { float: left; font-size: 4.2em; line-height: 0.8; padding: 0.06em 0.1em 0 0; color: var(--red); }
