@@ -750,7 +750,13 @@ a.trust-item:hover span { color: var(--paper); text-decoration: underline; text-
     linear-gradient(180deg, rgba(20, 16, 13, 0.5) 0%, rgba(20, 16, 13, 0) 28%),
     linear-gradient(0deg, rgba(20, 16, 13, 0.88) 0%, rgba(20, 16, 13, 0.3) 45%, rgba(20, 16, 13, 0.1) 100%);
 }
-@media (max-width: 640px) { .hero .hero-media::after { background: linear-gradient(0deg, rgba(20, 16, 13, 0.9) 0%, rgba(20, 16, 13, 0.55) 50%, rgba(20, 16, 13, 0.45) 100%); } }
+@media (max-width: 640px) {
+  .hero .hero-media::after {
+    background:
+      linear-gradient(180deg, rgba(20, 16, 13, 0.45) 0%, rgba(20, 16, 13, 0) 22%),
+      linear-gradient(0deg, rgba(20, 16, 13, 0.92) 0%, rgba(20, 16, 13, 0.7) 32%, rgba(20, 16, 13, 0.2) 62%, rgba(20, 16, 13, 0) 82%);
+  }
+}
 
 /* Hero always fits the screen, so the room timeline sits above the fold */
 .hero { height: 100vh; height: 100svh; min-height: 520px; }
